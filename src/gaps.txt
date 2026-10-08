@@ -313,3 +313,4 @@ innocent|The police found no evidence, so he is ___.|guilty,dishonest|rainy,wind
 strict|The teacher never lets us talk and has a lot of rules. She is very ___.|gentle,kind|rainy,windy,wooden
 wise|He has lived for ninety years and gives very good advice. He is ___.|silly,careless|rainy,windy,wooden
 tough|She fell off the horse, got up and kept riding. She is ___.|weak,sensitive|rainy,windy,wooden
+fat|The cat eats five meals a day, so it is very ___ now.|thin,slim|rainy,windy,wooden

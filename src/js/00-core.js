@@ -2,7 +2,7 @@
    Adjectivia — core helpers: DOM, storage, sound, speech, effects
    ============================================================ */
 'use strict';
-const VERSION = '0.2.0';
+const VERSION = '0.2.1';
 
 /* ---------- tiny DOM helpers ---------- */
 const $ = (s, r = document) => r.querySelector(s);
@@ -89,13 +89,25 @@ function newProfile(i) {
   return { name: '', active: 3, players, words: {}, viewed: [] };
 }
 const profileLabel = (pr, i) => (pr.name || '').trim() || 'Profile ' + (i + 1);
+const numOr0 = v => { v = Number(v); return isFinite(v) && v > 0 ? Math.round(v) : 0; };
+/** one player read from saved or imported data: wrong types are replaced by safe defaults */
+function cleanPlayer(src, k) {
+  const d = newPlayer(k); src = src && typeof src === 'object' ? src : {};
+  const modes = {};
+  if (src.modes && typeof src.modes === 'object') Object.keys(src.modes).slice(0, 20).forEach(m => { modes[String(m).slice(0, 20)] = numOr0(src.modes[m]); });
+  return { name: typeof src.name === 'string' ? src.name.slice(0, 14) : '', avatar: AVATARS.includes(src.avatar) ? src.avatar : d.avatar,
+    xp: numOr0(src.xp), trophies: Array.isArray(src.trophies) ? src.trophies.filter(t => typeof t === 'string').slice(0, 40) : [],
+    games: numOr0(src.games), correct: numOr0(src.correct), wrong: numOr0(src.wrong), bestStreak: numOr0(src.bestStreak), modes, cards: numOr0(src.cards) };
+}
 function normaliseProfile(saved, i) {
-  const pr = newProfile(i); saved = saved || {};
-  pr.name = typeof saved.name === 'string' ? saved.name : '';
+  const pr = newProfile(i); saved = saved && typeof saved === 'object' ? saved : {};
+  pr.name = typeof saved.name === 'string' ? saved.name.slice(0, 24) : '';
   pr.active = clamp(parseInt(saved.active, 10) || 3, 1, MAX_PLAYERS);
-  pr.words = saved.words && typeof saved.words === 'object' ? saved.words : {};
-  pr.viewed = Array.isArray(saved.viewed) ? saved.viewed : [];
-  for (let k = 0; k < MAX_PLAYERS; k++) pr.players[k] = Object.assign(newPlayer(k), (saved.players || [])[k] || {});
+  if (saved.words && typeof saved.words === 'object') Object.keys(saved.words).slice(0, 2000).forEach(w => {
+    const s = saved.words[w]; if (s && typeof s === 'object') pr.words[String(w).slice(0, 30)] = { ok: numOr0(s.ok), ko: numOr0(s.ko) };
+  });
+  pr.viewed = Array.isArray(saved.viewed) ? saved.viewed.filter(w => typeof w === 'string').slice(0, 2000) : [];
+  for (let k = 0; k < MAX_PLAYERS; k++) pr.players[k] = cleanPlayer((saved.players || [])[k], k);
   return pr;
 }
 function loadState() {

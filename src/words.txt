@@ -406,3 +406,4 @@ sticky|enganxós|sense|3|||| sticking to things|My hands are sticky after eating
 wooden|de fusta|sense|2|||| made of wood|They sat on a wooden bench.
 vast|extens|size|3||huge,enormous|tiny|extremely large|The desert is a vast area of sand.
 steep|costerut|size|3|||| rising very quickly, not gently|The hill is too steep to cycle up.
+fat|gras|look|1|||thin,slim|with a heavy, round body; not thin|The cat is fat because it eats too much.

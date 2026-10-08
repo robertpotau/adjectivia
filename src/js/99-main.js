@@ -169,6 +169,15 @@ function runSelfTest() {
   }));
   log('Pairs checked.');
 
+  /* ---- profiles: export / import ---- */
+  const payload = exportPayload([0, 1, 2, 3, 4, 5]);
+  const back = parseProfilesFile(JSON.stringify(payload));
+  ok(JSON.stringify(back.profiles) === JSON.stringify(ST.profiles.map((p, i) => normaliseProfile(p, i))), 'profiles: export/import round trip changed the data');
+  ['nope', '{}', '{"app":"other","profiles":[{}]}', '{"app":"adjectivia","profiles":[]}'].forEach(bad => { let thrown = false; try { parseProfilesFile(bad); } catch (e) { thrown = true; } ok(thrown, 'profiles: bad file accepted: ' + bad); });
+  const evil = parseProfilesFile(JSON.stringify({ app: 'adjectivia', profiles: [{ name: 12, active: 99, players: [{ name: 'x'.repeat(50), xp: -5, avatar: 'zzz', trophies: 'no', games: 'many' }], words: { happy: { ok: 'a', ko: 2 } } }] })).profiles[0];
+  ok(evil.active === 6 && evil.name === '' && evil.players[0].name.length === 14 && evil.players[0].xp === 0 && AVATARS.includes(evil.players[0].avatar) && Array.isArray(evil.players[0].trophies) && evil.players[0].games === 0 && evil.words.happy.ok === 0 && evil.words.happy.ko === 2 && evil.players.length === 6, 'profiles: import does not clean bad values');
+  log('Profile export/import checked.');
+
   /* ---- report ---- */
   window.__selftest = { fails, out, samples: Object.fromEntries(Object.keys(samples).map(t => [t, samples[t].map(q => ({ lead: q.lead, big: q.big || q.sentence || q.bigIcon, options: q.options.map(o => o.label), answer: q.answer, explain: q.explain }))])) };
   const box = h('div', { class: 'selftest' }, h('h2', null, fails.length ? '❌ Self test: ' + fails.length + ' problem(s)' : '✅ Self test passed'),

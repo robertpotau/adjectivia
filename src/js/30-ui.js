@@ -392,10 +392,69 @@ function showProfiles() {
       h('div', { class: 'p-xp' }, used ? totalXP + ' XP in total' : 'Empty profile'),
       h('div', { class: 'actions' },
         h('button', { class: 'btn primary', onclick: () => { ST.cur = i; saveAll(); sfx('start'); showHub(); } }, i === ST.cur ? 'Continue' : 'Use this profile'),
+        used ? h('button', { class: 'link', onclick: () => exportProfiles([i]) }, 'Export') : null,
         used ? h('button', { class: 'link', onclick: () => resetWholeProfile(i) }, 'Reset') : null)));
   });
-  wrap.append(grid, h('div', { class: 'actions' }, h('button', { class: 'btn', onclick: () => showHub() }, '← Back')));
+  const fileIn = h('input', { type: 'file', accept: '.json,application/json', hidden: true, 'aria-label': 'Choose a profiles file',
+    onchange: () => { const f = fileIn.files[0]; fileIn.value = ''; if (f) readImportFile(f); } });
+  wrap.append(grid,
+    h('div', { class: 'actions' },
+      h('button', { class: 'btn', onclick: () => exportProfiles([0, 1, 2, 3, 4, 5]), title: 'Save all profiles in a file' }, ico('1F4BE'), ' Export all'),
+      h('button', { class: 'btn', onclick: () => fileIn.click(), title: 'Load profiles from a file' }, ico('1F4C2'), ' Import…'), fileIn),
+    h('p', { class: 'muted small' }, 'Use Export and Import to back up your profiles or move them to another computer.'),
+    h('div', { class: 'actions' }, h('button', { class: 'btn', onclick: () => showHub() }, '← Back')));
   render(wrap, 'Profiles');
+}
+
+/* ---------- export / import of profiles (a plain .json file) ---------- */
+function exportPayload(indices) {
+  return { app: 'adjectivia', format: 1, version: VERSION, exported: new Date().toISOString(),
+    profiles: indices.map(i => JSON.parse(JSON.stringify(ST.profiles[i]))) };
+}
+/** Reads the text of an exported file. Returns the list of cleaned profiles, or throws an Error with a readable message. */
+function parseProfilesFile(text) {
+  let o; try { o = JSON.parse(text); } catch (e) { throw new Error('This file is not a valid Adjectivia profiles file.'); }
+  if (!o || o.app !== 'adjectivia' || !Array.isArray(o.profiles) || !o.profiles.length) throw new Error('This file does not contain Adjectivia profiles.');
+  if (o.profiles.length > MAX_PROFILES) throw new Error('The file has too many profiles.');
+  return { exported: o.exported || '', profiles: o.profiles.map((p, i) => normaliseProfile(p, i)) };
+}
+function exportProfiles(indices) {
+  const data = exportPayload(indices);
+  const day = new Date().toISOString().slice(0, 10);
+  const one = indices.length === 1 ? profileLabel(ST.profiles[indices[0]], indices[0]).replace(/[^A-Za-z0-9_-]+/g, '-').replace(/^-+|-+$/g, '') : 'all-profiles';
+  const blob = new Blob([JSON.stringify(data, null, 1)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = h('a', { href: url, download: 'adjectivia-' + (one || 'profile') + '-' + day + '.json' });
+  document.body.append(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 2000);
+  toast('Saved ' + indices.length + (indices.length === 1 ? ' profile' : ' profiles') + ' to a file', 'good');
+}
+function readImportFile(file) {
+  if (file.size > 5e6) return toast('That file is too big', 'bad');
+  const rd = new FileReader();
+  rd.onload = () => {
+    let res; try { res = parseProfilesFile(String(rd.result)); } catch (e) { return toast(e.message, 'bad'); }
+    confirmImport(res.profiles);
+  };
+  rd.onerror = () => toast('Could not read the file', 'bad');
+  rd.readAsText(file);
+}
+function confirmImport(profiles) {
+  const summary = list => h('ul', { class: 'imp-list' }, list.map((pr, i) => h('li', null, h('b', null, profileLabel(pr, i)), ' — ',
+    pr.players.slice(0, pr.active).map(p => (p.name || 'Player') + ' (' + p.xp + ' XP)').join(', '))));
+  const done = () => { closeModal(); saveAll(); toast('Profiles imported', 'good'); showProfiles(); };
+  if (profiles.length === 1) {
+    const sel = h('select', { 'aria-label': 'Where to put the profile' }, ST.profiles.map((pr, i) => h('option', { value: i, selected: i === ST.cur }, (i + 1) + '. ' + profileLabel(pr, i) + (i === ST.cur ? ' (current)' : ''))));
+    openModal(h('div', null, h('h3', null, ico('1F4C2'), ' Import a profile'), summary(profiles),
+      h('p', null, 'Put it in this place (what is there now will be replaced):'), sel,
+      h('div', { class: 'actions' }, h('button', { class: 'btn', onclick: closeModal }, 'Cancel'),
+        h('button', { class: 'btn primary', onclick: () => { ST.profiles[parseInt(sel.value, 10)] = profiles[0]; done(); } }, 'Import'))));
+  } else {
+    openModal(h('div', null, h('h3', null, ico('1F4C2'), ' Import ' + profiles.length + ' profiles'), summary(profiles),
+      h('p', { class: 'warn' }, 'All your current profiles will be replaced by these ones.'),
+      h('div', { class: 'actions' }, h('button', { class: 'btn', onclick: closeModal }, 'Cancel'),
+        h('button', { class: 'btn danger', onclick: () => { for (let i = 0; i < MAX_PROFILES; i++) ST.profiles[i] = profiles[i] || normaliseProfile(null, i); ST.cur = clamp(ST.cur, 0, MAX_PROFILES - 1); done(); } }, 'Replace all'))), null, true);
+  }
 }
 function resetWholeProfile(i) {
   const label = profileLabel(ST.profiles[i], i);

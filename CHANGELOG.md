@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1 — export / import of profiles
+- Profiles screen: **Export** (one profile or all six) saves a `.json` file; **Import** loads it back, into a chosen place for a single profile or replacing all profiles. Files are validated and cleaned on import.
+- New word: fat (387 adjectives, 301 gap sentences).
+
 ## 0.2.0 — profiles, more vocabulary, more sentences
 - **Profiles**: 6 saved profiles; each keeps its players' names, avatars, XP, trophies and missed words. The old single-group data is migrated into Profile 1.
 - Podiums show the XP each player earned in the game.
