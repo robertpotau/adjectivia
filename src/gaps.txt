@@ -1,0 +1,171 @@
+# Adjectivia — Sentence Gap bank, written by hand so that only ONE answer fits.
+# word|sentence (use ___ for the gap)|hard wrong answers|easy wrong answers
+#   hard wrong answers : words of the same kind that the sentence clearly rules out (opposites, wrong mood...)
+#   easy wrong answers : words that make no sense in the sentence at all
+#   The build keeps only words that exist in words.txt. Never put "a/an" right before the gap.
+#   Easy level shows 3 easy wrongs, Medium 1 hard + 2 easy, Hard 2 hard + 1 easy.
+# ---------------------------------------------------------------- feelings
+happy|My friends sang to me and gave me presents, so I felt very ___ on my birthday.|bored,angry|square,rainy,thick
+glad|You found my lost keys? I'm so ___ that you did!|furious,annoyed|wide,flat,windy
+pleased|The teacher read our stories and said, Well done! She was very ___ with us.|disappointed,upset|shallow,snowy,long
+cheerful|The waiter sings and smiles all day long. He is always ___.|gloomy,miserable|square,thick,rainy
+delighted|She screamed with joy when she opened the box. She was ___.|miserable,terrified|narrow,stormy,shallow
+thrilled|When the roller coaster started, we shouted with excitement. We were ___!|bored,disappointed|wide,flat,thick
+excited|Tomorrow we are going on holiday and I can't wait. I am so ___!|bored,upset|thick,flat,round
+proud|Anna won the race, and her mum said, I'm very ___ of you!|ashamed,scared|wide,rainy,flat
+relaxed|After the exams I lay on the sofa with no worries at all. I felt very ___.|nervous,stressed|square,narrow,long
+calm|The baby was crying, but the nurse stayed ___ and spoke softly.|angry,nervous|thick,round,deep
+grateful|You helped me with my homework all afternoon. I'm very ___.|jealous,annoyed|wide,snowy,thin
+sad|My best friend moved to another city and I cried. I felt very ___.|excited,proud|flat,windy,narrow
+unhappy|She has no friends at her new school, so she is very ___.|cheerful,delighted|square,thick,rainy
+upset|She dropped her new phone and the screen broke. She was very ___.|delighted,relaxed|round,long,thick
+miserable|It rained all week, we were cold and hungry, and nothing went well. We felt ___.|delighted,cheerful|square,narrow,round
+disappointed|I was hoping for a bike, but I only got socks. I was ___.|delighted,thrilled|flat,thick,windy
+lonely|Everybody went on holiday and I stayed at home with nobody to play with. I felt ___.|excited,proud|round,narrow,snowy
+devastated|His dog died. He cried for days and felt completely ___.|thrilled,relaxed|thick,wide,flat
+ashamed|He told a lie and hurt his friend. Now he feels ___ of what he did.|proud,delighted|round,flat,thin
+angry|My brother broke my favourite toy on purpose, and I shouted at him. I was very ___.|grateful,relaxed|thick,wide,round
+annoyed|My little sister keeps turning off the TV while I watch it. I'm getting ___.|pleased,grateful|square,round,long
+furious|Someone had smashed his car window, and he was shouting loudly. He was ___.|delighted,relaxed|thin,flat,deep
+grumpy|Dad hasn't had his coffee yet, so he is in a bad mood. He is ___ this morning.|cheerful,delighted|round,thick,windy
+scared|I'm ___ of big spiders, so I never touch them.|proud,ashamed|wide,rainy,flat
+afraid|She is ___ of the dark, so she sleeps with the light on.|proud,jealous|square,thick,narrow
+terrified|The ghost appeared behind him, and he was so ___ that he couldn't scream.|delighted,calm|thick,flat,wide
+worried|Her son is very late and isn't answering his phone. She is ___.|relaxed,cheerful|round,long,thin
+nervous|It's my first time on stage and my hands are shaking. I'm ___.|relaxed,bored|flat,wide,snowy
+anxious|He couldn't stop thinking about the exam all night because he felt so ___.|relaxed,calm|thick,round,long
+stressed|She has three exams and a project this week and no time to rest. She is very ___.|relaxed,calm|flat,wide,narrow
+surprised|Everybody jumped out of the cupboard and shouted when I opened the door. I was so ___!|bored,sleepy|thick,round,flat
+amazed|The magician made a rabbit disappear in front of us, and we were all ___.|bored,sleepy|thick,wide,square
+confused|The teacher explained it too fast and I didn't understand anything. I was ___.|delighted,proud|round,flat,thin
+bored|The film was very long and nothing happened. I was very ___.|excited,thrilled|wide,thick,flat
+embarrassed|I tripped in front of the whole class and my face turned red. I felt ___.|proud,relaxed|round,flat,narrow
+jealous|My friend got a new bike and I wanted one too. I felt ___ of him.|scared,ashamed|thick,wide,square
+disgusted|The fish smelled terrible and I turned my head away. I felt ___.|delighted,grateful|round,thin,flat
+# ---------------------------------------------------------------- body and health
+tired|He ran for two hours and now he can hardly walk. He is very ___.|energetic,lively|wide,flat,thick
+sleepy|It's midnight and the baby is yawning with her eyes closing. She is ___.|lively,energetic|round,thin,square
+exhausted|After running a marathon, she lay on the grass and couldn't move. She was ___.|lively,energetic|thick,wide,flat
+hungry|I didn't have breakfast and my stomach is making noises. I'm ___.|full,lively|round,thick,flat
+thirsty|It is a very hot day and we have no water to drink. We are ___.|lively,healthy|round,flat,wide
+sick|He ate five burgers and now his stomach hurts. He feels ___.|energetic,lively|thick,wide,round
+ill|I have a fever and a cough, so I can't go to school. I am ___.|healthy,well|square,thick,flat
+healthy|She eats fruit every day and plays sports. She is very ___.|ill,sick|round,thick,flat
+energetic|He ran around the park all morning and still wanted to play. He is so ___!|tired,sleepy|thick,wide,flat
+injured|He fell off his bike and broke his arm. He is ___.|healthy,lively|round,thin,square
+# ---------------------------------------------------------------- personality
+kind|She always helps old people to carry their shopping bags. She is very ___.|rude,selfish|wide,flat,rainy
+friendly|The new boy said hello to everybody and shared his sweets. He is very ___.|rude,selfish|thick,round,flat
+polite|He says please and thank you every time. He is very ___.|rude,lazy|square,thick,wide
+rude|He pushed past people and didn't say sorry. That was very ___.|polite,kind|round,flat,thin
+honest|She found a wallet in the street and gave it back. She is very ___.|dishonest,selfish|square,thick,round
+dishonest|He lied about his homework and cheated in the test. He is ___.|honest,polite|round,flat,wide
+clever|She finished the hardest puzzle in five minutes. She is very ___.|lazy,silly|thick,wide,flat
+silly|Look at him! He is wearing socks on his hands and singing to the cat. He is being ___.|serious,sensible|round,thick,square
+funny|My uncle makes everybody laugh with his jokes. He is really ___.|serious,rude|thick,round,wide
+brave|The boy ran into the burning house to save the cat. He is very ___.|scared,afraid|square,thin,flat
+lazy|He watches TV all day and never helps at home. He is so ___.|hard-working,helpful|round,thick,wide
+hard-working|She studies every evening and never forgets her homework. She is very ___.|lazy,careless|round,thick,square
+generous|He gave half of his lunch to a friend who had none. He is very ___.|selfish,mean|thick,flat,round
+selfish|She ate the whole cake and didn't offer any to her friends. How ___ of her!|generous,kind|round,flat,wide
+patient|The teacher waited quietly while the boy looked for the answer. She is very ___.|impatient,bossy|square,thick,flat
+impatient|He keeps looking at his watch and sighing because the bus is late. He is ___.|patient,calm|round,thick,flat
+creative|She paints, writes songs and invents new games all the time. She is very ___.|lazy,rude|square,thick,wide
+helpful|He carried my bags and opened the door for me. He is really ___.|rude,lazy|round,thick,flat
+careful|Walk slowly and look both ways before you cross the road. Be ___.|careless,silly|round,wide,flat
+careless|He forgot his key, lost his bag and broke a cup. He is so ___.|careful,patient|thick,round,flat
+bossy|She tells everybody what to do and never listens to them. She is so ___.|shy,polite|round,wide,thick
+confident|She walked onto the stage with a big smile and didn't need any notes. She is very ___.|shy,nervous|thick,round,flat
+shy|He hides behind his mum when he meets new people. He is very ___.|outgoing,confident|thick,round,wide
+outgoing|She loves parties and makes new friends everywhere she goes. She is very ___.|shy,rude|thick,flat,round
+naughty|The puppy chewed the sofa and ate the cake. He is a very ___ dog.|obedient,calm|square,thick,wide
+# ---------------------------------------------------------------- appearance and size
+beautiful|The sky was full of pink and orange colours at sunset. It was ___.|ugly,dirty|salty,hungry,sleepy
+tall|My brother can touch the ceiling without a chair. He is very ___.|short,weak|wide,round,flat
+strong|He lifted the piano on his own! He is so ___.|weak,lazy|round,flat,thin
+weak|After three days in bed with the flu, I was too ___ to stand up.|strong,energetic|square,thick,wide
+tiny|You need a magnifying glass to see an ant because it is so ___.|huge,enormous|thick,windy,rainy
+huge|The building was as tall as thirty houses. It was ___.|tiny,small|hungry,angry,rainy
+long|The snake measured two metres from its head to its tail. It was very ___.|short,tiny|hungry,angry,rainy
+wide|The road has six lanes, so it is very ___.|narrow,thin|hungry,angry,sleepy
+narrow|Only one person can walk through the street at a time because it is so ___.|wide,huge|hungry,angry,sleepy
+deep|The diver went down thirty metres, so the sea is very ___ there.|shallow,flat|hungry,angry,sleepy
+shallow|The baby can stand in the water because the pool is ___.|deep,huge|hungry,angry,sleepy
+heavy|I couldn't lift the suitcase because it was too ___.|light,thin|hungry,angry,sleepy
+light|The balloon floats in the air because it is so ___.|heavy,thick|hungry,angry,sleepy
+# ---------------------------------------------------------------- opinions
+wonderful|We saw dolphins jumping next to the boat. The whole day was ___!|terrible,boring|hungry,sleepy,angry
+boring|The film was two hours long and nothing happened. It was ___.|exciting,fascinating|hungry,sleepy,angry
+exciting|There were three goals in the last minute and the crowd was screaming. The match was ___.|boring,dull|hungry,sleepy,angry
+easy|I finished the test in five minutes without any problem. It was ___.|difficult,complicated|hungry,sleepy,angry
+difficult|Nobody could solve the puzzle, not even the teacher. It was very ___.|easy,simple|hungry,sleepy,angry
+dangerous|There are sharks in the water, so it is ___ to swim here.|safe,boring|hungry,sleepy,rainy
+safe|The doors are locked and the police are outside, so we are ___.|dangerous,terrible|hungry,sleepy,angry
+useful|A map is very ___ when you are lost in a big city.|useless,boring|hungry,sleepy,angry
+useless|The torch has no battery, so it is completely ___.|useful,helpful|hungry,sleepy,angry
+awful|The milk had gone bad, so it tasted ___.|delicious,tasty|hungry,sleepy,tall
+# ---------------------------------------------------------------- senses and things
+hot|Don't touch the oven! It is very ___.|cold,freezing|angry,sleepy,polite
+cold|It is snowing and my hands are blue. I am ___.|hot,boiling|angry,sleepy,polite
+boiling|In the desert at noon the temperature is 45 degrees. It is ___.|freezing,cold|angry,sleepy,polite
+freezing|It is minus ten outside and the lake is made of ice. It is ___.|boiling,hot|angry,sleepy,polite
+wet|I forgot my umbrella in the rain and now my clothes are ___.|dry,clean|angry,sleepy,polite
+dry|It hasn't rained for months, so the ground is very ___.|wet,soft|angry,sleepy,polite
+loud|The music was so ___ that I covered my ears.|quiet,silent|angry,sleepy,polite
+quiet|Shh! The baby is sleeping, so please be ___.|noisy,loud|angry,rainy,thick
+noisy|Thirty children are shouting and running in the playground. It is very ___.|quiet,silent|angry,sleepy,polite
+soft|You can sink into the pillow because it is very ___.|hard,rough|angry,sleepy,polite
+hard|You can't break a rock with your hand because it is very ___.|soft,smooth|angry,sleepy,polite
+sweet|I put three spoons of sugar in my tea, so it is very ___.|bitter,salty|angry,sleepy,polite
+sour|I bit a whole lemon and my face went funny. It was so ___.|sweet,delicious|angry,sleepy,polite
+spicy|I ate a chilli and my mouth was on fire. It was very ___.|sweet,mild|angry,sleepy,polite
+delicious|Grandma's cake is so ___ that I always ask for more.|disgusting,awful|angry,sleepy,polite
+disgusting|The milk was old and the smell made me hold my nose. It was ___.|delicious,tasty|angry,sleepy,polite
+bright|I had to close my eyes because the light was so ___.|dark,dull|angry,sleepy,polite
+dark|I can't see anything without a torch because it is so ___.|bright,shiny|angry,sleepy,polite
+clean|She washed the floor and now the kitchen is ___.|dirty,messy|angry,sleepy,polite
+dirty|The children played in the mud, so their clothes are ___.|clean,spotless|angry,sleepy,polite
+tidy|There are no toys on the floor and all the books are on the shelf. The room is ___.|messy,dirty|angry,sleepy,polite
+messy|Clothes are on the bed and books are on the floor. The room is ___.|tidy,clean|angry,sleepy,polite
+# ---------------------------------------------------------------- time, speed and money
+fast|The racing car goes three hundred kilometres an hour. It is very ___.|slow,heavy|angry,sleepy,polite
+slow|The snail needs an hour to cross the garden. It is very ___.|fast,quick|angry,sleepy,polite
+young|The baby was born two months ago, so she is very ___.|old,ancient|angry,sleepy,polite
+old|My grandfather was born in 1935, so he is very ___.|young,new|angry,sleepy,polite
+early|The sun was just rising when I woke up. It was very ___.|late,busy|angry,sleepy,polite
+late|The film started at eight, but he arrived at nine. He was ___.|early,quick|angry,sleepy,polite
+full|There is no space on the bus because every seat is taken. It is ___.|empty,free|angry,sleepy,polite
+empty|There is nothing in the fridge. It is completely ___.|full,heavy|angry,sleepy,polite
+rich|He has three houses, five cars and a lot of gold. He is very ___.|poor,cheap|angry,sleepy,polite
+poor|They can't pay for food or clothes. They are very ___.|rich,wealthy|angry,sleepy,polite
+expensive|The watch costs five thousand euros, so it is very ___.|cheap,free|angry,sleepy,polite
+cheap|The T-shirt only costs one euro. It is very ___.|expensive,rich|angry,sleepy,polite
+busy|She has a lot of homework and no time to play. She is ___.|free,lazy|angry,sleepy,polite
+famous|Everybody in the country knows her songs. She is very ___.|unknown,shy|angry,sleepy,polite
+# ---------------------------------------------------------------- second batch
+wrong|Two plus two is five? No, that answer is ___!|right,true|tall,round,sleepy
+right|Two plus two is four. Yes, you are ___!|wrong,false|sleepy,round,thick
+lucky|I found ten euros on the pavement. I am so ___!|unlucky,sad|square,thick,wide
+unlucky|Everything went wrong for him today. He is very ___.|lucky,cheerful|square,thick,round
+comfortable|I could sleep for hours on this big, soft sofa. It is very ___.|uncomfortable,hard|angry,tall,rainy
+uncomfortable|The chair is so hard that my back hurts. It is ___.|comfortable,soft|angry,tall,rainy
+crowded|There were thousands of people on the beach. It was very ___.|empty,quiet|thin,angry,sleepy
+popular|Everybody at school wants to be his friend. He is very ___.|unknown,shy|thick,round,flat
+wild|Lions live in the jungle and nobody looks after them. They are ___ animals.|tame,friendly|round,thick,flat
+tame|The bird sits on her hand and eats from it. It is very ___.|wild,dangerous|thick,round,flat
+sure|I put the keys in my bag, so I'm ___ about it.|confused,nervous|thick,round,flat
+sorry|I broke your pen by accident. I'm very ___.|proud,angry|thick,round,flat
+frustrated|He tried the level ten times and kept losing. He felt ___ and threw the controller.|delighted,relaxed|thick,round,wide
+hopeful|The match hasn't started, but I think we can win. I'm ___.|hopeless,miserable|thick,round,flat
+homesick|She is far from her family and misses her house. She feels ___.|delighted,excited|thick,round,flat
+determined|She never gives up and trains every day to win the race. She is very ___.|lazy,careless|thick,round,flat
+peaceful|The lake was calm, with no cars and no people. It was very ___.|noisy,crowded|thick,round,flat
+reliable|He always arrives on time and does what he says. He is very ___.|careless,lazy|thick,round,flat
+talkative|She talks all the time and never stops. She is very ___.|quiet,shy|thick,round,flat
+cheeky|The boy stuck his tongue out at his teacher. He was being ___.|polite,obedient|thick,round,flat
+awake|It is three in the morning, but I can't sleep. I am wide ___.|asleep,sleepy|thick,round,flat
+alive|The doctor said the old man is still breathing. He is ___.|dead,ill|thick,round,flat
+dead|Nobody watered the plant, and now it is ___.|alive,healthy|thick,round,flat
+high|The birds fly very ___ above the clouds.|low,short|angry,sleepy,polite
+low|The ceiling is so ___ that tall people hit their heads.|high,wide|angry,sleepy,polite
+different|My sister and I are not alike at all. We are very ___.|same,similar|angry,sleepy,polite
