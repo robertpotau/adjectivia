@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 — vocabulary review
+- Removed doubtful synonym/opposite links that could make a question arguable (e.g. surprised/bored, jealous/generous, perfect/terrible, scruffy/smart, calm/patient, bright/colourful, funny/silly).
+- Better Catalan for miserable, cute, quiet, soft, true, sure, moody, brilliant, amazing; a gentler sentence for "devastated".
+
 ## 0.1.1 — published on robertpotau.github.io (October 2026)
 - Canonical, Open Graph and JSON-LD metadata for the website; `index.html#hub` skips the title screen.
 

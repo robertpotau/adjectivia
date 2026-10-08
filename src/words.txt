@@ -13,7 +13,7 @@ delighted|encantat|joy|3|1F601*|thrilled,overjoyed,pleased|miserable,devastated|
 thrilled|entusiasmat|joy|3|1F973*|delighted,excited|bored|extremely excited about something good|We were thrilled when our team won the cup.
 overjoyed|eufòric|joy|3|1F606*|delighted,thrilled|devastated|so happy that you could shout or jump for joy|They were overjoyed when the baby was born.
 excited|il·lusionat|joy|1|1F929*|thrilled|bored|full of energy and looking forward to something|I'm excited because we are going to the beach tomorrow.
-proud|orgullós|joy|2||pleased|ashamed|feeling pleased about what you or someone close to you has done|My parents are proud of me because I passed the exam.
+proud|orgullós|joy|2|||ashamed|feeling pleased about what you or someone close to you has done|My parents are proud of me because I passed the exam.
 relaxed|relaxat|joy|2|1F60C*|calm|stressed,nervous,anxious|feeling calm, with no worries at all|I felt relaxed after a long, warm bath.
 calm|tranquil|joy|2|1F60C*|relaxed|angry,nervous,worried|quiet and peaceful, without strong feelings|Stay calm and walk slowly to the door.
 grateful|agraït|joy|3|1F64F|thankful|ungrateful|feeling that you want to say thank you|I'm so grateful for your help with my homework.
@@ -21,18 +21,18 @@ grateful|agraït|joy|3|1F64F|thankful|ungrateful|feeling that you want to say th
 sad|trist|sad|1|1F622*|unhappy,miserable|happy,glad,cheerful|feeling unhappy, often wanting to cry|I felt sad when my best friend moved away.
 unhappy|infeliç|sad|1|1F641*|sad|happy|not happy|He is unhappy at his new school.
 upset|trasbalsat|sad|2|1F625*|sad|pleased|worried and unhappy because something bad has happened|She was upset when she lost her phone.
-miserable|desgraciat|sad|3|1F629*|gloomy,sad|delighted,cheerful|very unhappy and uncomfortable|It rained all weekend and we felt miserable.
+miserable|abatut|sad|3|1F629*|gloomy,sad|delighted,cheerful|very unhappy and uncomfortable|It rained all weekend and we felt miserable.
 gloomy|melancòlic|sad|3|1F614*|miserable|cheerful|sad, with no hope; also dark and dull|Everyone was gloomy on that grey, rainy Monday.
 disappointed|decebut|sad|2|1F61E*|upset|pleased,satisfied|sad because things were not as good as you hoped|I was disappointed when the trip was cancelled.
-lonely|sol|sad|2|1F97A*|isolated|friendly|unhappy because you have no friends or company|The new girl felt lonely at lunchtime.
+lonely|sol|sad|2|1F97A*|isolated||unhappy because you have no friends or company|The new girl felt lonely at lunchtime.
 devastated|destrossat|sad|3|1F62D*|heartbroken|overjoyed,delighted|extremely shocked and very sad|He was devastated when his team lost the final.
 ashamed|avergonyit|sad|3||embarrassed|proud|feeling bad because of something wrong you have done|He was ashamed of lying to his best friend.
 # ---------------------------------------------------------------- angry feelings
 angry|enfadat|angry|1|1F620*|furious,annoyed|calm,pleased|feeling strong displeasure towards someone or something|Dad was angry because I broke his glasses.
 annoyed|molest|angry|2|1F612*|irritated,angry|pleased,calm|a little angry because something bothers you|I was annoyed because my brother took my pen without asking.
-furious|furiós|angry|3|1F621*|angry,enraged|calm,delighted|extremely angry|She was furious when she saw the broken window.
+furious|furiós|angry|3|1F621*|angry,enraged|calm|extremely angry|She was furious when she saw the broken window.
 irritated|irritat|angry|3||annoyed|calm|annoyed, especially by something that keeps happening|He felt irritated by the loud music next door.
-grumpy|de mal humor|angry|2|1F644*|annoyed|cheerful|in a bad mood and easily annoyed|Grandpa is grumpy before his morning coffee.
+grumpy|de mal humor|angry|2|1F644*||cheerful|in a bad mood and easily annoyed|Grandpa is grumpy before his morning coffee.
 # ---------------------------------------------------------------- scared and worried
 scared|espantat|fear|1|1F628*|afraid,frightened|brave,calm|feeling fear|I'm scared of big spiders.
 afraid|amb por|fear|1||scared,frightened|brave|feeling fear (used after the verb be)|Are you afraid of the dark?
@@ -44,19 +44,19 @@ anxious|ansiós|fear|3|1F630*|worried,nervous|relaxed|very worried and unable to
 stressed|estressat|fear|2|1F62B*|tense|relaxed,calm|feeling too much pressure and worry|He is stressed because he has three exams this week.
 tense|tens|fear|3||stressed|relaxed|so nervous or worried that you cannot relax|The room was tense before the results came out.
 # ---------------------------------------------------------------- other feelings
-surprised|sorprès|feel|1|1F62E*|astonished,amazed|bored|feeling the shock of something unexpected|I was surprised to see my teacher at the cinema.
-amazed|bocabadat|feel|2|1F92F*|astonished,surprised|bored|so surprised that you can hardly believe it|We were amazed by the magician's tricks.
-astonished|astorat|feel|3||amazed,surprised|bored|extremely surprised|He was astonished to find a puppy in the box.
+surprised|sorprès|feel|1|1F62E*|astonished,amazed||feeling the shock of something unexpected|I was surprised to see my teacher at the cinema.
+amazed|bocabadat|feel|2|1F92F*|astonished,surprised||so surprised that you can hardly believe it|We were amazed by the magician's tricks.
+astonished|astorat|feel|3||amazed,surprised||extremely surprised|He was astonished to find a puppy in the box.
 shocked|esfereït|feel|3|1F632*|astonished|calm|very upset or surprised by something bad|She was shocked to hear about the accident.
 confused|confós|feel|2|1F615*|puzzled|clear|not able to understand something|I'm confused, can you explain it again?
 puzzled|desconcertat|feel|3||confused|clear|confused because you cannot find an answer|The detective looked puzzled by the empty room.
 curious|curiós|feel|2|1F9D0*|interested|bored|wanting to know or learn about something|The children were curious about the strange box.
 bored|avorrit|feel|1|1F611*|fed up|excited,interested,thrilled|feeling tired because nothing interests you|I was bored during the long film.
 interested|interessat|feel|1|1F914*|curious|bored|wanting to know more about something|She is interested in space and planets.
-embarrassed|cohibit|feel|2|1F633*|ashamed|proud,confident|feeling shy and uncomfortable in front of other people|I was embarrassed when I forgot my words on stage.
-jealous|gelós|feel|2||envious|generous|unhappy because someone has something that you want|I felt jealous of my friend's new bike.
+embarrassed|cohibit|feel|2|1F633*|ashamed||feeling shy and uncomfortable in front of other people|I was embarrassed when I forgot my words on stage.
+jealous|gelós|feel|2||envious||unhappy because someone has something that you want|I felt jealous of my friend's new bike.
 envious|envejós|feel|3||jealous|content|wanting what another person has|She was envious of her cousin's beautiful house.
-disgusted|fastiguejat|feel|3|1F92E*|repelled|delighted|feeling strong dislike for something unpleasant|I was disgusted by the smell of the old fish.
+disgusted|fastiguejat|feel|3|1F92E*|repelled||feeling strong dislike for something unpleasant|I was disgusted by the smell of the old fish.
 fed up|fart|feel|3||bored|content|tired of something that has lasted too long|I'm fed up with this rainy weather.
 # ---------------------------------------------------------------- body and health
 tired|cansat|body|1|1F971*|exhausted,sleepy|energetic,lively|needing rest or sleep|I'm tired because I went to bed late.
@@ -79,11 +79,11 @@ polite|educat|trait|1|1F647|well-mannered|rude|having good manners|It is polite 
 rude|mal educat|trait|1||impolite|polite,kind|having bad manners|It's rude to talk with your mouth full.
 honest|sincer|trait|2|2705|truthful|dishonest|always telling the truth|An honest person never tells lies.
 dishonest|deshonest|trait|3||untruthful|honest|not telling the truth, or cheating|The dishonest shopkeeper charged too much.
-clever|espavilat|trait|1|1F9E0|smart,intelligent|silly|quick at learning and understanding|She is a clever girl who solves puzzles easily.
-smart|llest|trait|1||clever,intelligent|silly|good at thinking and solving problems|That was a smart answer!
-intelligent|intel·ligent|trait|2||clever,smart|silly|having a high level of understanding and learning|An intelligent student asks good questions.
-silly|ximple|trait|1|1F92A|funny|serious,sensible|not serious; behaving in a foolish, playful way|Stop being silly and sit down!
-funny|graciós|trait|1|1F602|amusing|serious,boring|making you laugh|My uncle tells very funny jokes.
+clever|espavilat|trait|1|1F9E0|smart,intelligent||quick at learning and understanding|She is a clever girl who solves puzzles easily.
+smart|llest|trait|1||clever,intelligent||good at thinking and solving problems|That was a smart answer!
+intelligent|intel·ligent|trait|2||clever,smart||having a high level of understanding and learning|An intelligent student asks good questions.
+silly|ximple|trait|1|1F92A||serious,sensible|not serious; behaving in a foolish, playful way|Stop being silly and sit down!
+funny|graciós|trait|1|1F602|amusing|serious|making you laugh|My uncle tells very funny jokes.
 amusing|divertit|trait|3||funny|serious|funny and entertaining|The clown told an amusing story.
 brave|valent|trait|1|1F981|courageous|scared,afraid|ready to face danger without fear|The brave firefighter saved the cat.
 courageous|coratjós|trait|3||brave|frightened|having courage when something is dangerous or difficult|The courageous girl jumped in to save her friend.
@@ -92,11 +92,11 @@ hard-working|treballador|trait|2|1F41D|diligent|lazy|always working with a lot o
 generous|generós|trait|2|1F381|kind|selfish,mean|happy to give or share what you have|My generous aunt gave me ten euros.
 selfish|egoista|trait|2||greedy|generous|thinking only about yourself|Don't be selfish, share your sweets!
 mean|garrepa|trait|3||selfish|generous|not willing to share or spend money|He is too mean to buy his friend an ice cream.
-patient|pacient|trait|2|23F3|calm|impatient|able to wait without getting angry|The patient teacher explained it three times.
+patient|pacient|trait|2|23F3||impatient|able to wait without getting angry|The patient teacher explained it three times.
 impatient|impacient|trait|3||restless|patient|not willing to wait calmly|The impatient boy kept asking, Are we there yet?
 serious|seriós|trait|2||solemn|silly,funny|not joking; thinking carefully about something|The doctor looked serious.
-creative|creatiu|trait|2|1F3A8|imaginative|dull|good at thinking of new ideas|Her creative stories are full of surprises.
-helpful|servicial|trait|2||kind|useless|ready to help other people|The helpful shop assistant carried my bag.
+creative|creatiu|trait|2|1F3A8|imaginative||good at thinking of new ideas|Her creative stories are full of surprises.
+helpful|servicial|trait|2||kind||ready to help other people|The helpful shop assistant carried my bag.
 careful|cuidadós|trait|2|26A0|cautious|careless|paying attention so you do not make mistakes or get hurt|Be careful with the hot soup!
 careless|descuidat|trait|3||sloppy|careful|not paying enough attention|A careless mistake cost him the game.
 stubborn|tossut|trait|3|1F410|obstinate|flexible|refusing to change your mind|My stubborn brother never says sorry.
@@ -113,18 +113,18 @@ pretty|bonic|look|1|1F338|beautiful,lovely|ugly|attractive in a delicate way|She
 gorgeous|bellíssim|look|3||beautiful|ugly|extremely beautiful|The gorgeous garden was full of roses.
 handsome|guapo|look|2|1F935|good-looking|ugly|attractive, said mainly about men or boys|The handsome prince smiled.
 ugly|lleig|look|1||unattractive|beautiful,pretty,handsome|not nice to look at|The witch in the story had an ugly face.
-cute|tendre|look|1|1F97A|adorable|ugly|sweet and attractive, especially something small or young|Look at that cute baby panda!
+cute|mono|look|1|1F97A|adorable|ugly|sweet and attractive, especially something small or young|Look at that cute baby panda!
 adorable|adorable|look|2|1F970|cute|ugly|so cute that you love it at once|The adorable kitten fell asleep in my hands.
 tall|alt|look|1|1F992|high|short|having a large height, used for people and trees|My brother is tall enough to touch the ceiling.
 slim|prim|look|2||thin|chubby|attractively thin|The slim dancer moved gracefully.
 chubby|rodonet|look|3||plump|slim|slightly round and soft in shape|The baby had chubby cheeks.
 elegant|elegant|look|3|1F3A9|stylish|scruffy|graceful and stylish|She looked elegant in her long black dress.
-scruffy|desmanegat|look|3||untidy|elegant,smart|looking untidy and not well cared for|The scruffy dog had muddy fur.
+scruffy|desmanegat|look|3||untidy|elegant,well-dressed|looking untidy and not well cared for|The scruffy dog had muddy fur.
 well-dressed|ben vestit|look|2||elegant|scruffy|wearing nice, clean and tidy clothes|He looked well-dressed in his suit at the wedding.
 strong|fort|look|1|1F4AA|powerful|weak|having great physical power|The strong man lifted the heavy box.
 weak|feble|look|1|1F940|feeble|strong|not strong; without energy|After the flu, I felt weak.
-pale|pàl·lid|look|3||pasty|colourful|with less colour than usual in the face|She went pale when she saw the spider.
-colourful|acolorit|look|2|1F308|bright|dull,pale|having many bright colours|The colourful parrot flew over our heads.
+pale|pàl·lid|look|3||pasty||with less colour than usual in the face|She went pale when she saw the spider.
+colourful|acolorit|look|2|1F308||dull,pale|having many bright colours|The colourful parrot flew over our heads.
 # ---------------------------------------------------------------- size and shape
 big|gran|size|1|1F418|large|small,little,tiny|of more than average size|An elephant is a big animal.
 large|gran|size|1||big|small,tiny|big, often used for sizes and amounts|We need a large box for all these toys.
@@ -141,7 +141,7 @@ narrow|estret|size|2||tight|wide|small in distance from side to side|We walked d
 thick|gruixut|size|2|1F4D6|chunky|thin|having a large distance between two opposite sides|This is a very thick book.
 thin|fi|size|1||slim|thick|having a small distance between two opposite sides|Cut the bread into thin slices.
 deep|profund|size|2|1F30A|bottomless|shallow|going a long way down|The lake is deep, so don't swim there alone.
-shallow|poc profund|size|3||low|deep|not deep|The baby pool is shallow.
+shallow|poc profund|size|3|||deep|not deep|The baby pool is shallow.
 round|rodó|size|1|26BD|circular|square|shaped like a circle or a ball|A football is round.
 square|quadrat|size|2|1F7E6|boxy|round|having four straight sides of equal length|The table is square, so four people can sit at it.
 flat|pla|size|2||level|bumpy,hilly|smooth and level, without bumps or hills|The desert is flat and empty.
@@ -154,12 +154,12 @@ great|genial|quality|1|1F31F|wonderful,fantastic|terrible,awful|very good|We had
 wonderful|meravellós|quality|2|2728|fantastic,marvellous|awful,terrible|extremely good and pleasant|What a wonderful surprise!
 marvellous|esplèndid|quality|3||wonderful,fantastic|awful|wonderful and surprising|We saw a marvellous show at the circus.
 fantastic|fantàstic|quality|2|1F389|wonderful,excellent|awful,terrible|extremely good; amazing|You played a fantastic game!
-excellent|excel·lent|quality|2|1F3C6|great,brilliant|poor,terrible|of very high quality|Your homework is excellent.
-amazing|increïble|quality|2|1F320|incredible|ordinary|very surprising and wonderful|The acrobat did an amazing trick.
+excellent|excel·lent|quality|2|1F3C6|great,brilliant|terrible|of very high quality|Your homework is excellent.
+amazing|sorprenent|quality|2|1F320|incredible|ordinary|very surprising and wonderful|The acrobat did an amazing trick.
 incredible|increïble|quality|3||amazing|ordinary|so good or so big that it is hard to believe|The view from the top is incredible.
 awesome|impressionant|quality|3||amazing,brilliant|dull|very impressive, causing great admiration|That skate trick was awesome!
-perfect|perfecte|quality|2|1F4AF|flawless|terrible|without any mistakes|Her pronunciation is perfect.
-brilliant|genial|quality|3|1F4A1|excellent,fantastic|awful|extremely good or very clever|What a brilliant idea!
+perfect|perfecte|quality|2|1F4AF|flawless||without any mistakes|Her pronunciation is perfect.
+brilliant|brillant|quality|3|1F4A1|excellent,fantastic|awful|extremely good or very clever|What a brilliant idea!
 nice|agradable|quality|1||pleasant,lovely|horrible,unpleasant|pleasant and enjoyable|We had a nice walk in the forest.
 pleasant|plaent|quality|3||nice|unpleasant|giving you a feeling of enjoyment|It was a pleasant evening with friends.
 unpleasant|desagradable|quality|3||horrible|pleasant,nice|not enjoyable; making you feel uncomfortable|There was an unpleasant smell in the room.
@@ -186,7 +186,7 @@ odd|estrany|quality|3||strange|normal|different from what is usual or expected|I
 normal|normal|quality|1||usual|strange,odd|usual and as expected|It's normal to feel nervous before an exam.
 ordinary|corrent|quality|3||normal,common|special,unique|not special; usual|It was just an ordinary Tuesday.
 useful|útil|quality|2|1F527|handy|useless|helping you to do something|A dictionary is very useful for learning words.
-useless|inútil|quality|3||worthless|useful,helpful|not useful; not working|This old umbrella is useless because it has holes.
+useless|inútil|quality|3||worthless|useful|not useful; not working|This old umbrella is useless because it has holes.
 dangerous|perillós|quality|1|1F988|risky|safe|likely to cause harm|It's dangerous to cross the road without looking.
 safe|segur|quality|1|1F6E1|secure|dangerous,risky|not in danger|You are safe here, nothing can hurt you.
 # ---------------------------------------------------------------- senses, taste and things
@@ -195,15 +195,15 @@ boiling|bullent|sense|2|2668|hot|freezing|extremely hot|It's boiling in this roo
 cold|fred|sense|1|1F976|chilly,freezing|hot,warm,boiling|having a low temperature|My hands are cold.
 freezing|gelat|sense|2|2744|cold|boiling,hot|extremely cold|It's freezing outside, so wear a coat!
 chilly|fresquet|sense|3||cool,cold|warm|unpleasantly cold|It's a chilly morning, so take a jacket.
-warm|càlid|sense|1|2600|mild|cold,cool|pleasantly hot|I love warm weather.
+warm|càlid|sense|1|2600||cold,cool|pleasantly hot|I love warm weather.
 cool|fresc|sense|2|1F9CA|chilly|warm,hot|slightly cold in a pleasant way|A cool breeze came from the sea.
 wet|mullat|sense|1|1F4A7|damp|dry|covered with water|My socks are wet because I stepped in a puddle.
 dry|sec|sense|1|1F3DC|arid|wet|not wet|The desert is hot and dry.
 loud|fort|sense|1|1F50A|noisy|quiet,silent|making a lot of sound|The music is too loud.
 noisy|sorollós|sense|1|1F4E2|loud|quiet,silent|full of loud or unpleasant sounds|The classroom is noisy at break time.
-quiet|tranquil|sense|1|1F92B|silent|loud,noisy|making little or no sound|Please be quiet in the library.
+quiet|callat|sense|1|1F92B|silent|loud,noisy|making little or no sound|Please be quiet in the library.
 silent|silenciós|sense|2||quiet|noisy,loud|without any sound at all|The forest was silent at night.
-soft|suau|sense|1|1F9F8|smooth|hard,rough|pleasant to touch; not firm|The kitten has soft fur.
+soft|tou|sense|1|1F9F8||hard,rough|pleasant to touch; not firm|The kitten has soft fur.
 hard|dur|sense|1|1FAA8|solid,difficult|soft,easy|firm and solid; not easy to bend|A rock is hard.
 rough|aspre|sense|3||bumpy|smooth,soft|not smooth; with an uneven surface|The wall is rough and scratchy.
 smooth|llis|sense|2||even|rough|having a flat, even surface|The baby's skin is smooth.
@@ -218,7 +218,7 @@ delicious|deliciós|sense|2|1F370|tasty,yummy|disgusting|extremely tasty|Mum's c
 yummy|boníssim|sense|2||tasty,delicious|disgusting|very tasty, a word used mostly by children|This ice cream is yummy!
 disgusting|repugnant|sense|2|1F92E|revolting|delicious,tasty|very unpleasant to taste or smell|The milk smelled disgusting.
 fresh|fresc|sense|2|1F96C|new|stale|new, clean and not old, said about food or air|I bought fresh bread this morning.
-stale|passat|sense|3||old|fresh|no longer fresh, said about bread or air|The stale bread was too hard to eat.
+stale|passat|sense|3|||fresh|no longer fresh, said about bread or air|The stale bread was too hard to eat.
 bright|lluminós|sense|1|1F506|shining|dark,dull|giving or reflecting a lot of light|The sun is very bright today.
 dark|fosc|sense|1|1F311|dim|bright,light|with little or no light|It's dark in the cellar, so take a torch.
 shiny|brillant|sense|2|2728|glossy|dull|reflecting light|She wore shiny silver shoes.
@@ -293,14 +293,14 @@ popular|popular|world|2|1F44F|well-liked||liked by a lot of people|He is popular
 crowded|ple de gent|world|2|1F465|packed|empty|full of people|The beach was so crowded that we couldn't find a place.
 possible|possible|quality|2||likely|impossible|able to happen or be done|Is it possible to see the sea from here?
 impossible|impossible|quality|2||unthinkable|possible|not able to happen or be done|It is impossible to count all the stars.
-true|cert|quality|1||right,correct|false|based on facts; not a lie|It is true that Madrid is the capital of Spain.
+true|veritable|quality|1||right,correct|false|based on facts; not a lie|It is true that Madrid is the capital of Spain.
 false|fals|quality|2||wrong,untrue|true|not true; wrong|That story is false because it never happened.
 real|real|quality|2||genuine|fake|existing in life; not imagined or copied|Dragons aren't real, they only live in stories.
 fake|de pega|quality|3||counterfeit|real|not real; made to look real|This fake watch only costs five euros.
-sure|segur|quality|2||certain|unsure|completely confident about something|I'm sure that I closed the door.
+sure|convençut|quality|2||certain|unsure|completely confident about something|I'm sure that I closed the door.
 certain|cert|quality|3||sure|doubtful|without any doubt|It is certain that the sun will rise tomorrow.
 sorry|penedit|feel|1|1F97A|||sad because you did something wrong|I'm sorry that I broke your pen.
-guilty|culpable|sad|3||ashamed|innocent|feeling bad because you did something wrong|She felt guilty about eating the last cake.
+guilty|culpable|sad|3|||innocent|feeling bad because you did something wrong|She felt guilty about eating the last cake.
 frustrated|frustrat|angry|3|1F624*|annoyed,irritated|pleased|angry because you cannot do what you want|He was frustrated because the game kept crashing.
 hopeful|esperançat|joy|3|1F91E|optimistic|hopeless|feeling that good things will happen|We are hopeful that the weather will be sunny.
 hopeless|desesperançat|sad|3||pessimistic|hopeful|feeling that nothing good will happen|He felt hopeless after losing every single game.
@@ -317,7 +317,7 @@ ambitious|ambiciós|trait|3||driven|lazy|wanting very much to be successful|She 
 arrogant|arrogant|trait|3||conceited||thinking that you are better than other people|He is arrogant and never listens to anyone.
 sensitive|sensible|trait|3||tender||easily hurt or upset by what people say|She is sensitive and cried at the sad film.
 talkative|xerraire|trait|2|1F5E3|chatty|quiet|liking to talk a lot|My talkative cousin never stops chatting.
-moody|lunàtic|trait|3||temperamental|calm|changing mood quickly, often being bad-tempered|My moody brother is happy one minute and angry the next.
+moody|de humor canviant|trait|3||temperamental|calm|changing mood quickly, often being bad-tempered|My moody brother is happy one minute and angry the next.
 cheeky|barrut|trait|2||naughty|polite|a little rude in a funny way|The cheeky boy stuck his tongue out at me.
 awake|despert|body|2|1F440|alert|asleep,sleepy|not sleeping|It is three in the morning and I am still awake.
 asleep|adormit|body|2|1F6CC||awake|sleeping|The baby is asleep in her cot.

@@ -2,7 +2,7 @@
    Adjectivia — core helpers: DOM, storage, sound, speech, effects
    ============================================================ */
 'use strict';
-const VERSION = '0.1.1';
+const VERSION = '0.1.2';
 
 /* ---------- tiny DOM helpers ---------- */
 const $ = (s, r = document) => r.querySelector(s);
