@@ -67,7 +67,7 @@ function boot() {
   $('#btn-full').addEventListener('click', () => {
     try { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); } catch (e) { /* ignore */ }
   });
-  showSplash();
+  if (/#hub\b/.test(location.hash)) showHub(); else showSplash();     // index.html#hub skips the title screen
   if (/[?&]selftest/.test(location.search)) runSelfTest();
 }
 /* ============================================================
