@@ -169,3 +169,147 @@ dead|Nobody watered the plant, and now it is ___.|alive,healthy|thick,round,flat
 high|The birds fly very ___ above the clouds.|low,short|angry,sleepy,polite
 low|The ceiling is so ___ that tall people hit their heads.|high,wide|angry,sleepy,polite
 different|My sister and I are not alike at all. We are very ___.|same,similar|angry,sleepy,polite
+# ---------------------------------------------------------------- third batch (0.2.0)
+irritated|The dripping tap kept him awake all night, so he felt very ___ in the morning.|delighted,relaxed|rainy,windy,wooden
+frightened|The loud fireworks made the little dog ___ and it hid under the bed.|brave,relaxed|rainy,windy,wooden
+tense|Everybody was ___ in the room while the judges read out the results.|relaxed,cheerful|rainy,windy,wooden
+overwhelmed|She had two exams, a project and a match in the same week, and she felt ___.|relaxed,bored|rainy,windy,wooden
+interested|I love space, so I am very ___ in this documentary about the planets.|bored,scared|rainy,windy,wooden
+curious|The children wanted to know what was inside the box, so they were very ___.|bored,sleepy|rainy,windy,wooden
+puzzled|I read the problem three times, but I couldn't find the answer. I was ___.|confident,relaxed|rainy,windy,wooden
+fed up|It has rained for ten days and I'm ___ with the weather.|delighted,satisfied|wide,flat,square
+impressed|She sang so beautifully that the whole class was ___ by her voice.|disgusted,bored|rainy,windy,wooden
+enthusiastic|Everyone was ___ about the school trip and asked a lot of questions.|bored,upset|rainy,windy,wooden
+satisfied|He studied hard, and he was ___ with his exam mark.|disappointed,ashamed|rainy,windy,wooden
+well|I was ill yesterday, but today I feel ___.|ill,sick|rainy,windy,wooden
+asleep|The baby is very quiet because she is ___ in her cot.|awake,noisy|round,thick,flat
+fit|He plays football every day, so he is very ___.|weak,lazy|rainy,windy,wooden
+painful|My leg is broken, and it is very ___ when I walk.|relaxing,comfortable|angry,sleepy,polite
+pretty|The flowers in the garden are very ___.|ugly,noisy|angry,hungry,sleepy
+ugly|Nobody liked the monster in the story because it was very ___.|pretty,handsome|angry,hungry,sleepy
+cute|Look at the baby panda! It is so ___!|ugly,boring|angry,hungry,sleepy
+blonde|Her hair is the colour of straw, so she is ___.|curly,straight|rainy,windy,wooden
+handsome|The prince in the story was tall and very ___.|ugly,scruffy|rainy,windy,wooden
+slim|The dancer is very ___: she weighs only forty kilos.|chubby,heavy|rainy,windy,wooden
+well-dressed|He wore a clean suit and a tie. He looked very ___.|scruffy,messy|rainy,windy,wooden
+colourful|The parrot has red, blue, green and yellow feathers. It is very ___.|pale,dull|hungry,angry,sleepy
+curly|Her hair has lots of little waves and spirals. It is ___.|straight,flat|wide,salty,frozen
+powerful|The engine is so ___ that the car can reach three hundred kilometres an hour.|weak,slow|hungry,angry,sleepy
+fashionable|She always wears the latest styles, so she is very ___.|old-fashioned,scruffy|rainy,windy,wooden
+chubby|The baby has round cheeks and soft little arms. He is ___.|slim,thin|rainy,windy,wooden
+elegant|She wore a long silk dress and walked gracefully. She looked very ___.|scruffy,messy|rainy,windy,wooden
+scruffy|His hair was uncombed and his clothes were dirty. He looked ___.|elegant,tidy|rainy,windy,wooden
+pale|She was ill and her face had no colour. She was very ___.|colourful,shiny|rainy,windy,wooden
+good|My mum cooked a lovely dinner. It was really ___.|bad,awful|angry,sleepy,polite
+bad|The soup is cold and has no taste. It is very ___.|good,delicious|angry,sleepy,polite
+great|We won the cup and everybody celebrated. It was a really ___ day.|terrible,boring|hungry,sleepy,angry
+nice|The weather is warm and sunny, so it is ___ outside.|horrible,unpleasant|angry,sleepy,polite
+interesting|The film was about space and I wanted to learn more. It was very ___.|boring,dull|hungry,sleepy,angry
+important|You must study for the test because it is very ___.|useless,easy|hungry,sleepy,angry
+special|It is my birthday today, so this day is very ___.|ordinary,normal|hungry,sleepy,angry
+normal|It was a regular school day and nothing unusual happened. It was ___.|strange,weird|hungry,sleepy,angry
+same|Those two girls are twins and they always wear the ___ clothes.|different,expensive|hungry,sleepy,angry
+favourite|I love pizza more than any other food. It is my ___ food.|worst,boring|hungry,sleepy,angry
+ready|Dinner is on the table and we can eat now. It is ___.|broken,lost|hungry,sleepy,angry
+true|The newspaper said the match was cancelled, and it really was cancelled. The news is ___.|false,wrong|hungry,sleepy,angry
+better|My first drawing was bad, but my second one is much ___.|worse,worst|hungry,sleepy,angry
+worse|My cold was bad yesterday, and today it is even ___.|better,best|hungry,sleepy,angry
+best|She won the gold medal, so she is the ___ player in the team.|worst,bad|hungry,sleepy,angry
+worst|He lost every game, so he is the ___ player in the team.|best,good|hungry,sleepy,angry
+broken|I dropped my phone and the screen is in many pieces. It is ___.|new,perfect|angry,sleepy,polite
+fun|The party had music, games and cake. It was really ___.|boring,dull|hungry,sleepy,angry
+scary|There was a ghost in the dark house, and the film was very ___.|funny,relaxing|hungry,sleepy,polite
+excellent|She got ten out of ten in every exam. Her marks are ___.|terrible,poor|hungry,sleepy,angry
+amazing|The magician made an elephant disappear! It was ___.|boring,ordinary|hungry,sleepy,angry
+perfect|She did the whole exercise without a single mistake. Her work is ___.|terrible,wrong|hungry,sleepy,angry
+terrible|The storm destroyed many houses and hurt many people. It was ___.|wonderful,lovely|hungry,sleepy,polite
+horrible|The smell from the bin was so bad that I felt sick. It was ___.|lovely,pleasant|hungry,sleepy,polite
+simple|The recipe has only two steps, so it is very ___.|complicated,difficult|hungry,sleepy,angry
+strange|The house was empty, but I heard footsteps inside. It was very ___.|normal,ordinary|hungry,sleepy,polite
+possible|Can we meet on Friday? Yes, it is ___.|impossible,wrong|hungry,sleepy,angry
+impossible|Nobody can lift a car with one finger. It is ___.|possible,easy|hungry,sleepy,angry
+false|The report said that the Earth is flat, but that is ___.|true,right|hungry,sleepy,angry
+positive|He thinks about the good side of everything. His attitude is very ___.|negative,hopeless|round,thick,flat
+negative|She says that everything is bad and nothing will work. Her attitude is very ___.|positive,cheerful|round,thick,flat
+clear|You can see the bottom of the lake because the water is so ___.|dirty,dark|hungry,sleepy,polite
+necessary|You can't enter without a ticket, so a ticket is ___.|unnecessary,useless|hungry,sleepy,angry
+usual|I got up at seven o'clock, like every other day. It was my ___ time.|unusual,strange|hungry,sleepy,angry
+unusual|It is very rare to see snow in July. It is ___.|usual,normal|hungry,sleepy,angry
+typical|Paella is very ___ of Spanish food: you can find it everywhere.|unusual,rare|hungry,sleepy,angry
+regular|I go to the gym every Monday and Thursday. My training is ___.|rare,strange|hungry,sleepy,angry
+secret|Shh! Don't tell anyone, it is ___.|famous,common|hungry,sleepy,angry
+successful|The company sold a million games, so it is very ___.|poor,unknown|hungry,sleepy,angry
+surprising|I didn't expect the end of the story. It was very ___.|boring,normal|hungry,sleepy,angry
+whole|I was so hungry that I ate the ___ pizza.|empty,broken|angry,sleepy,polite
+lost|We didn't have a map and we couldn't find the way back. We were ___.|safe,ready|rainy,windy,wooden
+missing|Where is my pencil case? It was on the table, but now it is ___.|broken,new|angry,sleepy,polite
+rare|You almost never see this animal in nature. It is very ___.|common,popular|hungry,sleepy,angry
+common|You see pigeons in every city. They are very ___ birds.|rare,unusual|hungry,sleepy,angry
+valuable|The painting is worth a million euros, so it is very ___.|cheap,useless|hungry,sleepy,angry
+poisonous|Don't eat those red mushrooms because they are ___.|safe,delicious|hungry,sleepy,angry
+annoying|My little brother keeps tapping the table, and it is very ___.|relaxing,pleasant|hungry,sleepy,polite
+disappointing|We waited all day for the match, but it ended nil-nil. It was ___.|exciting,fantastic|hungry,sleepy,angry
+embarrassing|I fell off the stage in front of everyone. It was very ___.|relaxing,fun|hungry,sleepy,angry
+relaxing|I lay on the beach and listened to the waves. It was really ___.|stressful,tiring|hungry,sleepy,angry
+stressful|I had three tests in one day. It was very ___.|relaxing,fun|hungry,sleepy,angry
+tiring|We walked for ten hours up the mountain. It was very ___.|relaxing,fun|hungry,sleepy,angry
+confusing|The map has no names and too many lines. It is ___.|clear,simple|hungry,sleepy,angry
+new|I bought these shoes yesterday. They are ___.|old,broken|hungry,sleepy,angry
+near|My school is five minutes from my house. It is very ___ to my house.|far,high|angry,sleepy,polite
+far|The Moon is hundreds of thousands of kilometres away. It is very ___.|near,low|angry,sleepy,polite
+open|The sign on the shop door says Come in! The shop is ___.|closed,broken|angry,sleepy,polite
+closed|The door is locked and the lights are off. The shop is ___.|open,busy|angry,sleepy,polite
+modern|This school has computers and smart boards. It is very ___.|ancient,old-fashioned|angry,sleepy,polite
+ancient|The Romans built this temple two thousand years ago. It is ___.|modern,new|angry,sleepy,polite
+free|I have no homework or plans on Sunday. I am ___ all day.|busy,lost|rainy,windy,wooden
+recent|The news is from this morning, so it is very ___.|old,ancient|angry,sleepy,polite
+old-fashioned|He still uses a telephone with a dial. It is very ___.|modern,fashionable|angry,sleepy,polite
+unknown|Nobody had ever heard of the singer. She was ___.|famous,popular|rainy,windy,wooden
+warm|On a spring day the sun feels pleasantly ___, not too hot.|freezing,boiling|angry,sleepy,polite
+cool|A cold drink with ice is ___ and refreshing.|boiling,hot|angry,sleepy,polite
+silent|There wasn't a single sound in the library. It was completely ___.|noisy,loud|angry,hungry,polite
+smooth|The table is polished and has no bumps. It feels ___.|rough,sharp|angry,sleepy,polite
+salty|I added too much salt, so the soup is ___.|sweet,bitter|angry,sleepy,polite
+fresh|The bread came out of the oven this morning. It is ___.|stale,old|angry,sleepy,polite
+shiny|The new car is clean, and the sun makes it ___.|dull,dirty|angry,sleepy,polite
+sharp|Be careful with the knife because it is very ___.|blunt,soft|angry,sleepy,polite
+tight|I can't breathe in these jeans because they are too ___.|loose,wide|angry,sleepy,polite
+loose|The shirt is two sizes too big and very ___.|tight,small|angry,sleepy,polite
+frozen|It is minus ten, so the lake is ___.|boiling,hot|angry,sleepy,polite
+rough|I scratched my hand on the wall because it is so ___.|smooth,soft|angry,sleepy,polite
+bitter|Black coffee without sugar is ___.|sweet,tasty|angry,sleepy,polite
+mild|This curry has almost no pepper, so it is ___.|spicy,hot|angry,sleepy,polite
+stale|The bread was left open for a week and is now ___.|fresh,soft|angry,sleepy,polite
+blunt|The knife can't cut anything because it is ___.|sharp,shiny|angry,sleepy,polite
+sticky|I spilled honey on my hands, so they are ___.|clean,dry|angry,sleepy,polite
+big|The elephant is standing next to a mouse. It is very ___.|small,tiny|angry,sleepy,polite
+small|You can hold the kitten in one hand because it is so ___.|big,huge|angry,sleepy,polite
+short|The skirt only reaches the top of her legs. It is very ___.|long,wide|angry,sleepy,polite
+thin|The paper is so ___ that you can see through it.|thick,heavy|angry,sleepy,polite
+round|A ball has no corners. It is ___.|square,flat|angry,sleepy,polite
+thick|The book has two thousand pages. It is very ___.|thin,short|angry,sleepy,polite
+square|The table has four equal sides and four corners. It is ___.|round,narrow|angry,sleepy,polite
+flat|There are no hills or mountains here. The land is ___.|steep,high|angry,sleepy,polite
+steep|I had to walk very slowly because the hill was so ___.|flat,low|angry,sleepy,polite
+serious|He never jokes or smiles, and he talks about important things. He is very ___.|funny,silly|rainy,windy,wooden
+fair|The teacher gives the same chance to every student. She is very ___.|unfair,rude|rainy,windy,wooden
+unfair|The referee gave a penalty when nobody touched the player. It was very ___.|fair,polite|rainy,windy,wooden
+active|She runs, swims and plays tennis every week. She is very ___.|lazy,sleepy|rainy,windy,wooden
+crazy|He wants to swim across the ocean. That is a really ___ idea.|sensible,normal|hungry,sleepy,angry
+cruel|He hit the dog for no reason. That was very ___.|kind,gentle|hungry,sleepy,polite
+gentle|She spoke softly and touched the kitten very carefully. She is ___.|rough,cruel|rainy,windy,wooden
+responsible|She always remembers to feed the dog and do her homework. She is very ___.|careless,lazy|rainy,windy,wooden
+mean|He had lots of money, but he didn't want to buy a present for his mum. He was ___.|generous,kind|rainy,windy,wooden
+stubborn|He never changes his mind, even when everybody says he is wrong. He is ___.|obedient,sensible|rainy,windy,wooden
+obedient|The dog sits, stays and comes when you call it. It is very ___.|naughty,wild|angry,sleepy,polite
+optimistic|He smiles and says that everything will go well. He is very ___.|pessimistic,hopeless|rainy,windy,wooden
+pessimistic|She thinks that the worst will always happen. She is very ___.|optimistic,hopeful|rainy,windy,wooden
+loyal|He never leaves his friends alone when they are in trouble. He is very ___.|selfish,dishonest|rainy,windy,wooden
+ambitious|She wants to be the president of the country one day. She is very ___.|lazy,shy|rainy,windy,wooden
+arrogant|He thinks he is better than everybody and never listens. He is very ___.|shy,polite|rainy,windy,wooden
+sensitive|She cries easily when somebody says something unkind. She is very ___.|tough,cruel|rainy,windy,wooden
+moody|One minute he laughs, and the next minute he is angry. He is very ___.|calm,patient|rainy,windy,wooden
+innocent|The police found no evidence, so he is ___.|guilty,dishonest|rainy,windy,wooden
+strict|The teacher never lets us talk and has a lot of rules. She is very ___.|gentle,kind|rainy,windy,wooden
+wise|He has lived for ninety years and gives very good advice. He is ___.|silly,careless|rainy,windy,wooden
+tough|She fell off the horse, got up and kept riding. She is ___.|weak,sensitive|rainy,windy,wooden

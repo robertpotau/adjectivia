@@ -2,7 +2,7 @@
    Adjectivia — core helpers: DOM, storage, sound, speech, effects
    ============================================================ */
 'use strict';
-const VERSION = '0.1.2';
+const VERSION = '0.2.0';
 
 /* ---------- tiny DOM helpers ---------- */
 const $ = (s, r = document) => r.querySelector(s);
@@ -81,23 +81,45 @@ const defaultSettings = { sound: true, tts: true, readAnswers: true, confirm: tr
 function newPlayer(i) {
   return { name: '', avatar: AVATARS[i % AVATARS.length], xp: 0, trophies: [], games: 0, correct: 0, wrong: 0, bestStreak: 0, modes: {}, cards: 0 };
 }
+/* A profile is a saved group of up to 6 players (a class, a team...): their names, avatars, XP, trophies and the
+   statistics of the words they missed. ST.players / ST.active / ST.words / ST.viewed always point at the CURRENT profile. */
+const MAX_PROFILES = 6;
+function newProfile(i) {
+  const players = []; for (let k = 0; k < MAX_PLAYERS; k++) players.push(newPlayer(k));
+  return { name: '', active: 3, players, words: {}, viewed: [] };
+}
+const profileLabel = (pr, i) => (pr.name || '').trim() || 'Profile ' + (i + 1);
+function normaliseProfile(saved, i) {
+  const pr = newProfile(i); saved = saved || {};
+  pr.name = typeof saved.name === 'string' ? saved.name : '';
+  pr.active = clamp(parseInt(saved.active, 10) || 3, 1, MAX_PLAYERS);
+  pr.words = saved.words && typeof saved.words === 'object' ? saved.words : {};
+  pr.viewed = Array.isArray(saved.viewed) ? saved.viewed : [];
+  for (let k = 0; k < MAX_PLAYERS; k++) pr.players[k] = Object.assign(newPlayer(k), (saved.players || [])[k] || {});
+  return pr;
+}
 function loadState() {
   const st = {
     settings: Object.assign({}, defaultSettings, LS.get('settings', {})),
-    active: clamp(parseInt(LS.get('active', 3), 10) || 3, 1, MAX_PLAYERS),
-    players: [],
-    words: LS.get('words', {}),       // word -> {ok, ko}
-    prefs: LS.get('prefs', {})        // last options chosen in each mode
+    prefs: LS.get('prefs', {}),         // last options chosen in each mode
+    profiles: [], cur: 0
   };
-  const saved = LS.get('players', []);
-  for (let i = 0; i < MAX_PLAYERS; i++) st.players.push(Object.assign(newPlayer(i), saved[i] || {}));
+  const saved = LS.get('profiles', null);
+  for (let i = 0; i < MAX_PROFILES; i++) st.profiles.push(normaliseProfile(saved && saved[i], i));
+  if (!saved) {                          // first run after the single-group version: keep what was saved
+    const old = LS.get('players', null);
+    if (old) st.profiles[0] = normaliseProfile({ players: old, active: LS.get('active', 3), words: LS.get('words', {}), viewed: (st.prefs.viewed || []) }, 0);
+  }
+  st.cur = clamp(parseInt(LS.get('profile', 0), 10) || 0, 0, MAX_PROFILES - 1);
+  ['players', 'active', 'words', 'viewed'].forEach(k => Object.defineProperty(st, k, {
+    get() { return st.profiles[st.cur][k]; }, set(v) { st.profiles[st.cur][k] = v; }, enumerable: true
+  }));
   return st;
 }
 const ST = loadState();
 let saveTimer = 0;
 function saveAll() {
-  LS.set('settings', ST.settings); LS.set('active', ST.active);
-  LS.set('players', ST.players); LS.set('words', ST.words); LS.set('prefs', ST.prefs);
+  LS.set('settings', ST.settings); LS.set('profiles', ST.profiles); LS.set('profile', ST.cur); LS.set('prefs', ST.prefs);
 }
 /** debounce saves so a burst of answers does not hit storage every time */
 function save() { clearTimeout(saveTimer); saveTimer = setTimeout(saveAll, 250); }

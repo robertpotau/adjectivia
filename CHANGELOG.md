@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.0 — profiles, more vocabulary, more sentences
+- **Profiles**: 6 saved profiles; each keeps its players' names, avatars, XP, trophies and missed words. The old single-group data is migrated into Profile 1.
+- Podiums show the XP each player earned in the game.
+- The -ed/-ing pairs (bored/boring…) are never offered as wrong answers for each other.
+- 82 more adjectives after comparing with the Oxford 3000 (A1–B2): better/worse/best/worst, open/closed, near/far, usual/unusual, fair/unfair, -ed/-ing pairs (annoyed/annoying…), more personality and quality words. 386 in total.
+- Sentence Gap bank grows from 157 to 300 hand-checked sentences.
+
 ## 0.1.2 — vocabulary review
 - Removed doubtful synonym/opposite links that could make a question arguable (e.g. surprised/bored, jealous/generous, perfect/terrible, scruffy/smart, calm/patient, bright/colourful, funny/silly).
 - Better Catalan for miserable, cute, quiet, soft, true, sure, moody, brilliant, amazing; a gentler sentence for "devastated".

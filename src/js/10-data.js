@@ -45,7 +45,14 @@ WORDS.forEach(x => {
 });
 const synOf = w => Array.from(SYN.get(w) || []);
 const oppOf = w => Array.from(OPP.get(w) || []);
-const related = (a, b) => SYN.get(a).has(b) || OPP.get(a).has(b);
+/* -ed / -ing pairs (bored/boring): never offered as wrong answers for each other, because students mix them up */
+const ED_ING = [['annoyed', 'annoying'], ['disappointed', 'disappointing'], ['embarrassed', 'embarrassing'], ['relaxed', 'relaxing'],
+  ['confused', 'confusing'], ['shocked', 'shocking'], ['worried', 'worrying'], ['frightened', 'frightening'], ['terrified', 'terrifying'],
+  ['surprised', 'surprising'], ['tired', 'tiring'], ['interested', 'interesting'], ['excited', 'exciting'], ['bored', 'boring'],
+  ['amazed', 'amazing'], ['impressed', 'impressive'], ['stressed', 'stressful'], ['scared', 'scary']];
+const EDG = new Map(WORDS.map(x => [x.w, new Set()]));
+ED_ING.forEach(([a, b]) => { if (WMAP.has(a) && WMAP.has(b)) { EDG.get(a).add(b); EDG.get(b).add(a); } });
+const related = (a, b) => SYN.get(a).has(b) || OPP.get(a).has(b) || EDG.get(a).has(b);
 
 const NEAR_CACHE = new Map();
 /** every word within two steps (synonym/opposite links): never offered as a wrong answer for `w` */
@@ -56,7 +63,7 @@ function near(w) {
   let frontier = [w];
   for (let d = 0; d < 2; d++) {
     const nxt = [];
-    frontier.forEach(a => [SYN.get(a), OPP.get(a)].forEach(set => set.forEach(b => { if (!s.has(b)) { s.add(b); nxt.push(b); } })));
+    frontier.forEach(a => [SYN.get(a), OPP.get(a), EDG.get(a)].forEach(set => set.forEach(b => { if (!s.has(b)) { s.add(b); nxt.push(b); } })));
     frontier = nxt;
   }
   NEAR_CACHE.set(w, s);

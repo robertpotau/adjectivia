@@ -4,7 +4,7 @@
 const WB = { cat: 'all', lvl: 0, q: '', ca: true, missed: false };
 
 function noteViewed(word) {
-  const v = ST.prefs.viewed || (ST.prefs.viewed = []);
+  const v = ST.viewed;
   if (!v.includes(word)) { v.push(word); save(); if (v.length >= 50) activePlayers().forEach(p => award(p.id, 'bookworm')); }
 }
 function wbList() {

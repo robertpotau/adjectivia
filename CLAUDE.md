@@ -11,7 +11,8 @@
 
 ## Decisions
 - **No student names anywhere in the code, docs or repo** (the repo is public). Default players are `Player 1…Player 6`; the teacher types the real names in the game (saved in the browser's localStorage). Never add real names as defaults.
-- 1–6 players, names/avatars editable, each of the 6 places keeps its own XP, rank and trophies (`adjectivia_players`).
+- **6 saved profiles** (groups/classes): each stores its own players (names, avatars, XP, rank, trophies) and word statistics. `ST.players/active/words/viewed` are accessors onto the current profile (`ST.cur`), so game code does not know about profiles. localStorage keys `adjectivia_profiles` / `adjectivia_profile`; the old single-group keys are migrated into Profile 1 on first load.
+- 1–6 players per profile, names/avatars editable, each player keeps their own XP, rank and trophies; podiums show the XP earned in the game.
 - Interface in **English**; a "? català" button shows Catalan translations and halves the points (ladder: halves XP).
 - Teacher-facing choices in the setup screen of each mode; "Golden Ladder" can be played as a **team relay** or **one by one**.
 - Graphics: **OpenMoji** icons (CC BY-SA 4.0, credited in the footer and `LICENSE`) + own SVG (balloons, podium, UI). Sound effects are synthesised with WebAudio; speech uses the browser's English voice (`speechSynthesis`).
@@ -19,8 +20,8 @@
 
 ## Layout
 ```
-src/words.txt        vocabulary (304 adjectives) — the file to edit to add/change words
-src/gaps.txt         hand-written Sentence Gap bank (157 sentences with checked wrong answers)
+src/words.txt        vocabulary (386 adjectives) — the file to edit to add/change words
+src/gaps.txt         hand-written Sentence Gap bank (300 sentences with checked wrong answers)
 src/js/*.js          game code, concatenated in file-name order
 src/style.css        styles
 src/template.html    page skeleton (rights layer)

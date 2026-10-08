@@ -17,6 +17,7 @@ const MODE_COLORS = ['#ffd23f', '#4cc9f0', '#3ddc97', '#f472b6', '#a78bfa', '#fb
 function showHub() {
   if (G) G.live = false;
   const wrap = h('div', { class: 'hub' });
+  wrap.append(h('button', { class: 'profile-chip', onclick: () => showProfiles(), title: 'Change profile' }, ico('1F465'), ' Profile: ', h('b', null, profileLabel(ST.profiles[ST.cur], ST.cur)), h('small', null, ' · change')));
   const strip = h('div', { class: 'pstrip' });
   activePlayers().forEach(p => {
     const ri = rankInfo(p.id);
@@ -38,13 +39,13 @@ function showHub() {
   render(wrap, '');
 }
 function showSplash() {
-  const first = LS.get('players', null) === null;
+  const first = LS.get('profiles', null) === null && LS.get('players', null) === null;
   const wrap = h('div', { class: 'splash' },
     h('div', { class: 'owl' }, ico('1F989', 'huge')),
     h('h1', null, 'Adjectivia'),
     h('p', { class: 'tagline' }, 'Describe it. Feel it. Win it!'),
     h('div', { class: 'splash-faces' }, ['1F604', '1F622', '1F620', '1F628', '1F92F', '1F60E', '1F973'].map(c => ico(c))),
-    h('button', { class: 'btn primary huge', id: 'btn-play', onclick: () => { sfx('start'); if (first) { saveAll(); showPlayers(); } else showHub(); } }, ico('25B6'), ' Play'),
+    h('button', { class: 'btn primary huge', id: 'btn-play', onclick: () => { sfx('start'); if (first) { saveAll(); showProfiles(); } else showHub(); } }, ico('25B6'), ' Play'),
     h('p', { class: 'muted' }, 'English adjectives and feelings · 1 to 6 players · 9 games'));
   render(wrap, '');
   const b = $('#btn-play'); if (b) b.focus({ preventScroll: true });

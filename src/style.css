@@ -340,3 +340,19 @@ button.chip:hover { background: rgba(255,255,255,.24); }
   #crumb { display: none; } .pmini { min-width: 0; width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+
+/* ---------- profiles & experience ---------- */
+.profile-chip { display: flex; align-items: center; gap: .4rem; margin: 0 auto .6rem; padding: .35rem 1rem; border-radius: 99rem; background: var(--card); border: 1px solid var(--line); font-weight: 700; }
+.profile-chip:hover { background: var(--card2); } .profile-chip small { color: var(--text2); }
+.profiles-screen { text-align: center; } .profiles-screen h2 { font-size: 2.2rem; margin: .6rem 0; }
+.prgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; max-width: 70rem; margin: 1rem auto; }
+.prcard { padding: 1rem; border-radius: 1.2rem; background: var(--card); border: .15rem solid var(--line); display: flex; flex-direction: column; align-items: center; gap: .5rem; }
+.prcard.cur { border-color: var(--gold); box-shadow: 0 0 1.2rem rgba(255,210,63,.3); }
+.prcard input { width: 100%; text-align: center; font: inherit; font-size: 1.3rem; font-weight: 800; color: #fff; background: rgba(0,0,0,.25); border: 1px solid var(--line); border-radius: .7rem; padding: .4rem; }
+.pr-who { display: flex; flex-wrap: wrap; gap: .35rem; justify-content: center; } .pr-p { display: inline-flex; align-items: center; gap: .2rem; padding: .15rem .6rem .15rem .3rem; border-radius: 99rem; border: 1px solid var(--pc); font-size: .85rem; font-weight: 700; } .pr-p .ico { width: 1.4rem; height: 1.4rem; }
+.xp-panel { margin: 1rem 0; padding: .8rem 1rem; border-radius: 1.2rem; background: var(--card); border: 1px solid var(--line); text-align: left; }
+.xp-panel h3 { margin-bottom: .5rem; text-align: center; }
+.xp-row { display: grid; grid-template-columns: 2rem 8rem 5rem 11rem 1fr 11rem; align-items: center; gap: .6rem; padding: .25rem 0; border-top: 1px solid rgba(255,255,255,.08); }
+.xp-gain { color: var(--mint); font-weight: 900; } .xp-rank { font-weight: 700; } .xp-row small { color: var(--text2); }
+@media (max-width: 760px) { .xp-row { grid-template-columns: 2rem 1fr auto; } .xp-row .xpbar, .xp-row small, .xp-row .xp-rank { display: none; } }
+::placeholder { color: rgba(255,255,255,.55); }

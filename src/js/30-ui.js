@@ -37,9 +37,10 @@ function giveXP(pid, n) {
   n = Math.round(n); if (!(n > 0)) return;
   const p = ST.players[pid], before = rankIdx(p.xp);
   p.xp += n;
+  if (G && G.xpGain) G.xpGain[pid] = (G.xpGain[pid] || 0) + n;
   const after = rankIdx(p.xp);
   if (after > before) {
-    sfx('levelup'); confetti(80);
+    sfx("levelup"); confetti(50);
     toast(h('div', { class: 'tt' }, ico(RANKS[after].ic), h('div', null, h('b', null, pname(pid) + ' is now a'), h('div', { class: 'tt-big' }, RANKS[after].name))), 'gold');
   }
   if (p.xp >= 1000) award(pid, 'xp1000');
@@ -79,7 +80,7 @@ function award(pid, id) {
 let G = null;
 const PLAY_MODES = ['ladder', 'memory', 'match', 'faces', 'gap', 'speed', 'hotseat', 'hangman'];
 function newGame(mode, pids) {
-  G = { mode, pids: pids.slice(), scores: {}, correct: {}, wrong: {}, streak: {}, best: {}, missed: new Set(), extra: {}, live: true };
+  G = { mode, pids: pids.slice(), scores: {}, correct: {}, wrong: {}, streak: {}, best: {}, missed: new Set(), extra: {}, xpGain: {}, live: true };
   pids.forEach(id => { G.scores[id] = 0; G.correct[id] = 0; G.wrong[id] = 0; G.streak[id] = 0; G.best[id] = 0; });
   return G;
 }
@@ -275,6 +276,16 @@ function showPodium(o) {
     if (G.correct[best] > 0) wrap.append(h('p', { class: 'mvp' }, ico('2B50'), ' Most correct answers: ', h('b', null, pname(best)), ' (' + G.correct[best] + ')'));
   }
   if (o.note) wrap.append(o.note);
+  if (G.xpGain && G.pids.some(id => G.xpGain[id])) {          // experience of every player in this game
+    wrap.append(h('div', { class: 'xp-panel' }, h('h3', null, ico('2B50'), ' Experience earned'), G.pids.map(id => {
+      const ri = rankInfo(id), p = ST.players[id];
+      return h('div', { class: 'xp-row', style: '--pc:' + PCOLORS[id] }, avatar(id, 'sm'), h('b', null, pname(id)),
+        h('span', { class: 'xp-gain' }, '+' + Math.round(G.xpGain[id] || 0) + ' XP'),
+        h('span', { class: 'xp-rank' }, ico(ri.rank.ic, 'tiny'), ' ' + ri.rank.name),
+        h('div', { class: 'xpbar' }, h('i', { style: 'width:' + ri.pct + '%' })),
+        h('small', null, p.xp + ' XP' + (ri.next ? ' · next rank at ' + ri.next.xp : ' · top rank!')));
+    })));
+  }
   const missed = Array.from(G.missed).map(byWord).filter(Boolean);
   if (missed.length) {
     wrap.append(h('div', { class: 'review' }, h('h3', null, ico('1F4DA'), ' Words to review'),
@@ -285,9 +296,9 @@ function showPodium(o) {
   acts.append(h('button', { class: 'btn', onclick: () => showHub() }, ico('1F3E0'), ' Home'));
   wrap.append(acts);
   render(wrap, o.title || 'Results');
-  sfx('win'); confetti(160, innerWidth / 2, innerHeight * 0.3);
-  Timers.set(() => confetti(90, innerWidth * 0.2, innerHeight * 0.35), 500);
-  Timers.set(() => confetti(90, innerWidth * 0.8, innerHeight * 0.35), 800);
+  sfx("win"); confetti(110, innerWidth / 2, innerHeight * 0.3);
+  Timers.set(() => confetti(50, innerWidth * 0.2, innerHeight * 0.35), 500);
+  Timers.set(() => confetti(50, innerWidth * 0.8, innerHeight * 0.35), 800);
 }
 
 /* ---------- generic setup screen ---------- */
@@ -351,12 +362,13 @@ function showPlayers(back) {
         h('div', { class: 'p-rank' }, ico(ri.rank.ic), ' ', ri.rank.name),
         h('div', { class: 'xpbar' }, h('i', { style: 'width:' + ri.pct + '%' })),
         h('div', { class: 'p-xp' }, p.xp + ' XP' + (ri.next ? ' · next: ' + ri.next.xp : '')),
-        h('button', { class: 'link', onclick: () => resetProfile(i, draw) }, 'Reset profile')));
+        h('button', { class: 'link', onclick: () => resetPlayer(i, draw) }, 'Reset player')));
     }
   };
   const count = h('b', { class: 'big-num' });
   const step = d => { ST.active = clamp(ST.active + d, 1, MAX_PLAYERS); sfx('click'); save(); draw(); };
   wrap.append(h('h2', null, 'Who is playing?'),
+    h('p', { class: 'muted' }, 'Profile: ', h('b', null, profileLabel(ST.profiles[ST.cur], ST.cur)), ' · ', h('button', { class: 'link', onclick: () => showProfiles() }, 'change profile')),
     h('div', { class: 'stepper' }, h('button', { class: 'btn round', onclick: () => step(-1), 'aria-label': 'Fewer players' }, '−'), h('div', null, count, h('small', null, ' players')),
       h('button', { class: 'btn round', onclick: () => step(1), 'aria-label': 'More players' }, '+')),
     grid, h('p', { class: 'muted' }, 'Names and points are saved in this browser. Each of the 6 places keeps its own XP and trophies.'),
@@ -364,14 +376,41 @@ function showPlayers(back) {
   draw();
   render(wrap, 'Players');
 }
+/* ---------- profiles: saved groups of players ---------- */
+function showProfiles() {
+  const wrap = h('div', { class: 'profiles-screen' }, h('h2', null, 'Choose a profile'),
+    h('p', { class: 'muted' }, 'A profile remembers the player names, avatars, XP, trophies and missed words of a group (for example one class). Click a name to rename the profile.'));
+  const grid = h('div', { class: 'prgrid' });
+  ST.profiles.forEach((pr, i) => {
+    const used = pr.players.some(p => p.xp > 0 || (p.name || '').trim() || p.games > 0);
+    const nameIn = h('input', { type: 'text', maxlength: 24, value: pr.name, placeholder: 'Profile ' + (i + 1), 'aria-label': 'Name of profile ' + (i + 1),
+      oninput: () => { pr.name = nameIn.value; save(); } });
+    const who = h('div', { class: 'pr-who' }, pr.players.slice(0, pr.active).map((p, k) =>
+      h('span', { class: 'pr-p', style: '--pc:' + PCOLORS[k] }, ico(p.avatar), ' ' + ((p.name || '').trim() || 'Player ' + (k + 1)))));
+    const totalXP = pr.players.slice(0, pr.active).reduce((a, p) => a + p.xp, 0);
+    grid.append(h('div', { class: 'prcard' + (i === ST.cur ? ' cur' : '') }, nameIn, who,
+      h('div', { class: 'p-xp' }, used ? totalXP + ' XP in total' : 'Empty profile'),
+      h('div', { class: 'actions' },
+        h('button', { class: 'btn primary', onclick: () => { ST.cur = i; saveAll(); sfx('start'); showHub(); } }, i === ST.cur ? 'Continue' : 'Use this profile'),
+        used ? h('button', { class: 'link', onclick: () => resetWholeProfile(i) }, 'Reset') : null)));
+  });
+  wrap.append(grid, h('div', { class: 'actions' }, h('button', { class: 'btn', onclick: () => showHub() }, '← Back')));
+  render(wrap, 'Profiles');
+}
+function resetWholeProfile(i) {
+  const label = profileLabel(ST.profiles[i], i);
+  openModal(h('div', null, h('h3', null, 'Reset ' + label + '?'), h('p', null, 'Names, avatars, XP, trophies and statistics of this whole profile will be erased.'),
+    h('div', { class: 'actions' }, h('button', { class: 'btn', onclick: closeModal }, 'Cancel'),
+      h('button', { class: 'btn danger', onclick: () => { ST.profiles[i] = normaliseProfile(null, i); saveAll(); closeModal(); showProfiles(); } }, 'Reset'))));
+}
 function pickAvatar(i, done) {
   const used = new Set(ST.players.slice(0, ST.active).map((p, j) => j === i ? null : p.avatar));
   const grid = h('div', { class: 'av-grid' }, AVATARS.map(a => h('button', { class: 'av' + (ST.players[i].avatar === a ? ' on' : ''), disabled: used.has(a),
     onclick: () => { ST.players[i].avatar = a; save(); closeModal(); done(); } }, ico(a))));
   openModal(h('div', null, h('h3', null, 'Choose an avatar'), grid, h('div', { class: 'actions' }, h('button', { class: 'btn', onclick: closeModal }, 'Close'))));
 }
-function resetProfile(i, done) {
-  openModal(h('div', null, h('h3', null, 'Reset ' + pname(i) + '’s profile?'), h('p', null, 'XP, rank, trophies and statistics of this place will be erased. The name stays.'),
+function resetPlayer(i, done) {
+  openModal(h('div', null, h('h3', null, 'Reset ' + pname(i) + '’s progress?'), h('p', null, 'XP, rank, trophies and statistics of this place will be erased. The name stays.'),
     h('div', { class: 'actions' }, h('button', { class: 'btn', onclick: closeModal }, 'Cancel'),
       h('button', { class: 'btn danger', onclick: () => { const p = ST.players[i]; Object.assign(p, newPlayer(i), { name: p.name, avatar: p.avatar }); save(); closeModal(); done(); } }, 'Reset'))));
 }
@@ -392,7 +431,7 @@ function showSettings() {
     h('div', { class: 'srow' }, h('div', null, h('b', null, 'Class statistics'), h('small', null, 'Forget which words were missed.')),
       h('button', { class: 'btn small', onclick: () => { ST.words = {}; save(); toast('Statistics cleared'); } }, 'Clear')),
     h('div', { class: 'srow' }, h('div', null, h('b', null, 'Erase everything'), h('small', null, 'Names, XP, trophies and settings.')),
-      h('button', { class: 'btn small danger', onclick: () => { if (confirm('Erase ALL saved data of Adjectivia in this browser?')) { ['settings', 'active', 'players', 'words', 'prefs'].forEach(LS.del); location.reload(); } } }, 'Erase')),
+      h('button', { class: 'btn small danger', onclick: () => { if (confirm('Erase ALL saved data of Adjectivia in this browser?')) { ['settings', 'profiles', 'profile', 'prefs', 'active', 'players', 'words'].forEach(LS.del); location.reload(); } } }, 'Erase')),
     h('div', { class: 'actions' }, h('button', { class: 'btn primary', onclick: closeModal }, 'Done'))));
 }
 function paintSound() {

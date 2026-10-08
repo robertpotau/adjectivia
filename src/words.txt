@@ -7,7 +7,7 @@
 # ---------------------------------------------------------------- positive feelings
 happy|feliç|joy|1|1F604*|glad,cheerful|sad,unhappy|feeling pleased and full of joy|I am happy because it is my birthday today.
 glad|content|joy|1|1F642*|happy,pleased|sad|happy because of something good that has happened|I'm glad you came to my party.
-pleased|satisfet|joy|2|1F600*|glad,delighted|disappointed|satisfied with something that has been done well|The teacher was pleased with our homework.
+pleased|complagut|joy|2|1F600*|glad,delighted|disappointed|satisfied with something that has been done well|The teacher was pleased with our homework.
 cheerful|alegre|joy|2|1F60A*|happy|gloomy,miserable|always smiling and in a good mood|The cheerful waiter smiled at every customer.
 delighted|encantat|joy|3|1F601*|thrilled,overjoyed,pleased|miserable,devastated|extremely pleased and happy|She was delighted with her birthday present.
 thrilled|entusiasmat|joy|3|1F973*|delighted,excited|bored|extremely excited about something good|We were thrilled when our team won the cup.
@@ -157,7 +157,7 @@ fantastic|fantàstic|quality|2|1F389|wonderful,excellent|awful,terrible|extremel
 excellent|excel·lent|quality|2|1F3C6|great,brilliant|terrible|of very high quality|Your homework is excellent.
 amazing|sorprenent|quality|2|1F320|incredible|ordinary|very surprising and wonderful|The acrobat did an amazing trick.
 incredible|increïble|quality|3||amazing|ordinary|so good or so big that it is hard to believe|The view from the top is incredible.
-awesome|impressionant|quality|3||amazing,brilliant|dull|very impressive, causing great admiration|That skate trick was awesome!
+awesome|espectacular|quality|3||amazing,brilliant|dull|very impressive, causing great admiration|That skate trick was awesome!
 perfect|perfecte|quality|2|1F4AF|flawless||without any mistakes|Her pronunciation is perfect.
 brilliant|brillant|quality|3|1F4A1|excellent,fantastic|awful|extremely good or very clever|What a brilliant idea!
 nice|agradable|quality|1||pleasant,lovely|horrible,unpleasant|pleasant and enjoyable|We had a nice walk in the forest.
@@ -323,3 +323,86 @@ awake|despert|body|2|1F440|alert|asleep,sleepy|not sleeping|It is three in the m
 asleep|adormit|body|2|1F6CC||awake|sleeping|The baby is asleep in her cot.
 alive|viu|body|2|1F331|living|dead|living; not dead|The old tree is still alive.
 dead|mort|body|2|1F342||alive|not living any more|Nobody watered the plant, so it is dead.
+# ---------------------------------------------------------------- Oxford 3000 gaps: A1-B2 adjectives added in 0.2.0
+better|millor|quality|1|||worse|more good than something else|This pizza is better than that one.
+worse|pitjor|quality|1|||better|more bad than something else|The weather is worse today than yesterday.
+best|el millor|quality|1|||worst|better than all the others|She is the best player in the team.
+worst|el pitjor|quality|1|||best|worse than all the others|That was the worst film I have ever seen.
+blonde|ros|look|1|1F471|||with pale yellow hair|My little sister has blonde hair.
+curly|arrissat|look|2|1F9B1||straight|with hair that forms curls|He has short, curly hair.
+straight|llis|look|2|||curly|without a curve or a bend|She has long, straight hair.
+attractive|atractiu|look|2||good-looking|ugly|pleasant to look at|That is an attractive painting.
+powerful|poderós|look|2||strong|weak|having great strength or power|The engine of this truck is very powerful.
+fashionable|de moda|look|2||trendy|old-fashioned|popular at the moment|She wears fashionable clothes.
+near|proper|world|1|||far|not far away|The station is near my house.
+far|lluny|world|1|||near|a long way away|The beach is too far to walk.
+open|obert|world|1|1F513||closed|not closed|The shop is open until eight o'clock.
+closed|tancat|world|1|1F512||open|not open|The museum is closed on Mondays.
+recent|recent|world|2||new|old|that happened not long ago|There was a recent storm in my town.
+foreign|estranger|world|2|||| from another country|She speaks three foreign languages.
+elderly|d'edat avançada|world|3||old|young|a polite word for an old person|An elderly man sat on the bench.
+positive|positiu|quality|2|||negative|good or hopeful|She has a positive attitude to school.
+negative|negatiu|quality|2|||positive|bad or without hope|He is always negative about everything.
+broken|trencat|quality|1|||| in pieces or not working|The window is broken because of the ball.
+clear|clar|quality|2||obvious||easy to see through or to understand|The water is so clear that you can see the fish.
+fun|divertit|quality|1||enjoyable|boring|enjoyable and pleasant|The party was really fun.
+necessary|necessari|quality|2||essential|unnecessary|needed|It is necessary to wear a seat belt.
+unnecessary|innecessari|quality|3||needless|necessary|not needed|It is unnecessary to bring a pen, I have one.
+usual|habitual|quality|2||normal,typical|unusual|what happens most of the time|I woke up at the usual time.
+unusual|inusual|quality|2||strange|usual,normal|different from what is normal|It is unusual to see snow in July.
+typical|típic|quality|2||usual||showing the usual features of a type|Paella is a typical Spanish dish.
+regular|regular|quality|2||usual||happening again and again at the same times|I have regular classes every Tuesday.
+secret|secret|quality|2|||| that other people must not know|It's a secret, so don't tell anybody.
+successful|d'èxit|quality|2|||| achieving what you wanted|She is a successful football player.
+surprising|inesperat|quality|2|||| causing surprise|The result of the match was surprising.
+whole|sencer|quality|2||complete|| all of something, not a part|I ate the whole pizza!
+lost|perdut|quality|2||missing||not able to find your way, or not found|We got lost in the forest.
+missing|desaparegut|quality|2||lost||not in its place, so nobody can find it|Two students are missing from class today.
+rare|poc freqüent|quality|2||unusual|common|not often seen or found|Pandas are rare animals.
+common|comú|quality|2||ordinary,normal|rare|found in many places; not special|Sparrows are common birds.
+valuable|valuós|quality|2||precious||worth a lot of money or very useful|The old painting is very valuable.
+poisonous|verinós|quality|2|||| containing poison that can kill|Some mushrooms are poisonous.
+scary|que fa por|quality|1|1F47B|frightening,terrifying||making you feel afraid, like a horror film|The film was too scary for little children.
+frightening|espantós|quality|2||scary,terrifying||causing fear because it is strange or dangerous|The storm was very frightening.
+terrifying|terrorífic|quality|3||frightening,scary||extremely frightening|The roller coaster looked terrifying.
+annoying|empipador|quality|2||irritating||making you feel annoyed|The noise outside is really annoying.
+disappointing|decebedor|quality|2|||| not as good as you hoped|The match was disappointing.
+embarrassing|vergonyós|quality|2||awkward||making you feel embarrassed|It was embarrassing when I fell over in front of everybody.
+relaxing|relaxant|quality|2||calming|stressful|helping you feel calm|A warm bath is very relaxing.
+stressful|estressant|quality|2||tiring|relaxing|making you feel worried and tense|Exam week is very stressful.
+tiring|esgotador|quality|2||exhausting||making you feel tired|Climbing the mountain was tiring.
+confusing|confús|quality|2|||| difficult to understand|The instructions are confusing.
+shocking|impactant|quality|3|||| causing a big shock|The news about the accident was shocking.
+worrying|preocupant|quality|3|||| making you worried|It is worrying that he is so late.
+impressive|impressionant|quality|3||remarkable||causing admiration|It was an impressive performance.
+familiar|familiar|quality|3|||| known well because you have seen or heard it before|The song sounds familiar.
+mysterious|misteriós|quality|3||strange||strange and difficult to explain|There was a mysterious light in the sky.
+sudden|sobtat|quality|3|||| happening quickly and without warning|There was a sudden noise behind me.
+brief|breu|quality|3||short|long|lasting only a short time|He gave a brief answer.
+fair|just|trait|2||just|unfair|treating everyone in the same way|It isn't fair that I have more homework than you!
+unfair|injust|trait|2||unjust|fair|not treating people equally|The referee was unfair to our team.
+active|actiu|trait|2||energetic|lazy|doing many things, full of energy|My grandma is very active and walks every day.
+crazy|boig|trait|2||wild|sensible|very silly, strange or wild|That's a crazy idea!
+cruel|cruel|trait|2||unkind|kind|causing pain on purpose|It is cruel to hurt animals.
+gentle|delicat|trait|2||tender|rough|calm and kind, not rough|Be gentle with the baby.
+innocent|innocent|trait|3|||guilty|not guilty of a crime or a bad action|The judge said that he was innocent.
+keen|amb ganes|trait|3||enthusiastic||wanting to do something very much|She is keen on swimming.
+responsible|responsable|trait|2||reliable||doing what you should and able to be trusted|He is responsible and feeds the dog every day.
+talented|talentós|trait|2||gifted||having a natural ability|She is a talented singer.
+strict|estricte|trait|3|||| making people obey the rules|Our teacher is strict but fair.
+wise|savi|trait|3||sensible||having good judgement from experience|My grandfather is a wise old man.
+tough|resistent|trait|3||strong|weak|strong and able to deal with difficulties|She is tough and never gives up.
+alone|sol|feel|2|||| without any other person|She likes to be alone in her room.
+impressed|impressionat|feel|3|||| admiring something very much|I was impressed by her singing.
+enthusiastic|entusiasta|joy|3||keen||full of interest and excitement about something|The students were enthusiastic about the trip.
+satisfied|satisfet|joy|3||pleased|disappointed|pleased with what you have got|He was satisfied with his exam mark.
+fit|en forma|body|2||healthy|unfit|healthy and strong because of exercise|He runs every day to stay fit.
+hurt|ferit|body|2||injured||in pain or physically harmed|He fell off his bike, but he wasn't hurt.
+painful|dolorós|body|2|||| causing pain|My broken arm is very painful.
+tight|ajustat|sense|2||narrow|loose|fitting very closely, not loose|These jeans are too tight.
+loose|folgat|sense|2|||tight|not fixed or tight|The tooth is loose and will fall out soon.
+frozen|congelat|sense|2|||| turned into ice|The lake is frozen in winter.
+sticky|enganxós|sense|3|||| sticking to things|My hands are sticky after eating honey.
+wooden|de fusta|sense|2|||| made of wood|They sat on a wooden bench.
+vast|extens|size|3||huge,enormous|tiny|extremely large|The desert is a vast area of sand.
+steep|costerut|size|3|||| rising very quickly, not gently|The hill is too steep to cycle up.
