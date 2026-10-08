@@ -10,7 +10,7 @@ Open `index.html` in a modern browser (Chrome, Edge, Firefox, Safari). No instal
 ## The nine games
 | Game | What you do |
 |---|---|
-| **Golden Ladder** | 15 questions from easy to very hard, safe steps at 5 and 10, five lifelines (50:50, Ask the class, Phone a friend, Swap, Double chance). Team relay or one by one. |
+| **Golden Ladder** | 15 questions from easy to very hard, safe steps at 5 and 10, five lifelines (50:50, Ask the class, Phone a friend, Swap, Double chance). Team relay or one by one, with original pirate and suspense music that gets more intense as you climb. |
 | **Memory** | Find pairs of synonyms, opposites or word + picture. |
 | **Match-Up** | Connect words with the same meaning, or opposites. |
 | **Emotion Faces** | Read the face and name the feeling, or find the face for a feeling. |

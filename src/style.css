@@ -360,3 +360,5 @@ button.chip:hover { background: rgba(255,255,255,.24); }
 .modal select { font: inherit; width: 100%; padding: .5rem; border-radius: .6rem; color: #fff; background: rgba(0,0,0,.35); border: 1px solid var(--line); margin-top: .3rem; }
 .modal select option { color: #111; }
 .muted.small { font-size: .85rem; text-align: center; }
+.btn.small.on { border-color: var(--mint); background: rgba(61,220,151,.18); }
+input[type=range] { width: 11rem; accent-color: var(--gold); }

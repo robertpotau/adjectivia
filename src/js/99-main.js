@@ -16,6 +16,7 @@ const MODE_COLORS = ['#ffd23f', '#4cc9f0', '#3ddc97', '#f472b6', '#a78bfa', '#fb
 
 function showHub() {
   if (G) G.live = false;
+  Music.stop(0.5);
   const wrap = h('div', { class: 'hub' });
   wrap.append(h('button', { class: 'profile-chip', onclick: () => showProfiles(), title: 'Change profile' }, ico('1F465'), ' Profile: ', h('b', null, profileLabel(ST.profiles[ST.cur], ST.cur)), h('small', null, ' · change')));
   const strip = h('div', { class: 'pstrip' });
@@ -184,6 +185,23 @@ function runSelfTest() {
     h('pre', null, out.join('\n')));
   render(box, 'Self test');
   log(fails.length ? 'FAILED' : 'PASSED');
+  /* music: render every track offline at three intensities; it must be audible, finite and not clipping */
+  window.__selftest.musicDone = false;
+  (async () => {
+    for (const name of Object.keys(Music.tracks)) for (const I of [0, 0.5, 1]) {
+      const d = (await Music.renderOffline(name, 6, I)).getChannelData(0);
+      let peak = 0, sum = 0, bad = 0;
+      for (let i = 0; i < d.length; i++) { const v = d[i]; if (!isFinite(v)) bad++; peak = Math.max(peak, Math.abs(v)); sum += v * v; }
+      const rms = Math.sqrt(sum / d.length);
+      const good = bad === 0 && peak < 0.99 && peak > 0.02 && rms > 0.004;
+      out.splice(out.length - 1, 0, 'Music ' + name + ' @' + I + ': peak ' + peak.toFixed(2) + ' rms ' + rms.toFixed(3) + (good ? '' : '  FAIL'));
+      if (!good) fails.push('music ' + name + ' @' + I);
+    }
+    $('pre', box).textContent = out.join('\n');
+    $('h2', box).textContent = fails.length ? '❌ Self test: ' + fails.length + ' problem(s)' : '✅ Self test passed';
+    if (!fails.length) out[out.length - 1] = 'PASSED'; else out[out.length - 1] = 'FAILED';
+    window.__selftest.musicDone = true;
+  })();
 }
 
 boot();

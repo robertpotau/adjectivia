@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.0 — music for the Golden Ladder
+- Two original tracks, synthesised in the browser (no audio files, no copyright issues): **Dungeon of Doom** (tense and scary: drone, heartbeat, creeping chromatic ostinato, dissonant strings, clock ticks, risers, cave wind) and **Jolly Roger Rush** (pirate sea-shanty in D minor, 6/8: bass, accordion-style stabs, drums, shaker and a fiddle tune with a harmony line).
+- Both get more intense as the ladder is climbed (more layers, faster tempo). Choose *Pirates, then suspense* (default), *Pirates*, *Suspense* or *Off* when setting up a Golden Ladder game.
+- Music button in the game, music on/off and volume in Settings; the music lowers itself when a word is spoken and when an answer is revealed.
+- Self test renders both tracks offline; `tools/music-preview.js` + `tools/upload_server.py` export them as .wav files.
+
 ## 0.2.1 — export / import of profiles
 - Profiles screen: **Export** (one profile or all six) saves a `.json` file; **Import** loads it back, into a chosen place for a single profile or replacing all profiles. Files are validated and cleaned on import.
 - New word: fat (387 adjectives, 301 gap sentences).

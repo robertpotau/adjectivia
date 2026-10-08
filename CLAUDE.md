@@ -49,6 +49,12 @@ Edit `src/`, then run `python tools/build.py`. (On Robert's school PC the `pytho
 3. Full playthroughs: in the console `eval(await (await fetch('tools/autoplay.js')).text()); runAll();` then read `window.__out` / `window.__errs`.
 4. The browser pane cannot script `file://` pages, hence the local server.
 
+## Music (src/js/05-music.js)
+- Two original procedural tracks (`tense` = "Dungeon of Doom", `pirate` = "Jolly Roger Rush") scheduled with WebAudio look-ahead; `Music.start(name, intensity 0..1)`, `Music.stop()`, `Music.duck()`. No audio files. Intensity opens layers and speeds up the tempo.
+- Used by the Golden Ladder only (`ladderMusic()` in `40-ladder.js`; option *Music* in the setup screen, settings `music` / `musicVol`). Music is stopped by `newGame`, `showHub`, `showPodium` and `endRun`: it must NOT be stopped by `render()` because the ladder re-renders for every question.
+- Compose-your-own: edit the note tables (`OST`, `P_CH`, `P_MEL`) and the layer rules in the two `step()` functions. Check with `index.html?selftest` (renders both tracks offline) and `tools/music-preview.js` (writes .wav files to `music-preview/` through `tools/upload_server.py`).
+- Both melodies are original; do not replace them with a known film tune.
+
 ## Code notes
 - Everything is global (one classic script). `render(build, crumb)` replaces the screen and **clears timers/keys first**: if a screen creates a countdown or key handler while being built, pass a *function* to `render`, otherwise the new timer is cleared by mistake.
 - `Timers.set/every` and `Keys.on` are cleared on every screen change; never use raw `setTimeout` for game logic.

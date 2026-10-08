@@ -2,7 +2,7 @@
    Adjectivia — core helpers: DOM, storage, sound, speech, effects
    ============================================================ */
 'use strict';
-const VERSION = '0.2.1';
+const VERSION = '0.3.0';
 
 /* ---------- tiny DOM helpers ---------- */
 const $ = (s, r = document) => r.querySelector(s);
@@ -76,7 +76,7 @@ const LS = {
 const AVATARS = ['1F98A', '1F43C', '1F42F', '1F438', '1F984', '1F427', '1F436', '1F431', '1F435', '1F430', '1F419', '1F428'];
 const PCOLORS = ['#22d3ee', '#ffd23f', '#f472b6', '#4ade80', '#a78bfa', '#fb923c'];
 const MAX_PLAYERS = 6;
-const defaultSettings = { sound: true, tts: true, readAnswers: true, confirm: true };
+const defaultSettings = { sound: true, music: true, musicVol: 0.6, tts: true, readAnswers: true, confirm: true };
 
 function newPlayer(i) {
   return { name: '', avatar: AVATARS[i % AVATARS.length], xp: 0, trophies: [], games: 0, correct: 0, wrong: 0, bestStreak: 0, modes: {}, cards: 0 };
@@ -194,6 +194,7 @@ function speak(text) {
     const u = new SpeechSynthesisUtterance(text);
     const v = bestVoice(); if (v) { u.voice = v; u.lang = v.lang; } else u.lang = 'en-GB';
     u.rate = 0.9; speechSynthesis.speak(u);
+    if (typeof Music !== 'undefined' && Music.playing()) Music.duck(2600, 0.3);     // keep the voice clear
   } catch (e) { /* ignore */ }
 }
 

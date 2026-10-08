@@ -80,6 +80,7 @@ function award(pid, id) {
 let G = null;
 const PLAY_MODES = ['ladder', 'memory', 'match', 'faces', 'gap', 'speed', 'hotseat', 'hangman'];
 function newGame(mode, pids) {
+  Music.stop(0.4);
   G = { mode, pids: pids.slice(), scores: {}, correct: {}, wrong: {}, streak: {}, best: {}, missed: new Set(), extra: {}, xpGain: {}, live: true };
   pids.forEach(id => { G.scores[id] = 0; G.correct[id] = 0; G.wrong[id] = 0; G.streak[id] = 0; G.best[id] = 0; });
   return G;
@@ -250,7 +251,7 @@ function finishGame(opts) {
   showPodium(Object.assign({}, opts, { order, winners }));
 }
 function showPodium(o) {
-  G.live = false;
+  G.live = false; Music.stop(0.5);
   const order = o.order, wrap = h('div', { class: 'podium-screen' });
   wrap.append(h('h2', { class: 'pod-title' }, o.title || 'Game over!'));
   if (o.subtitle) wrap.append(h('p', { class: 'pod-sub' }, o.subtitle));
@@ -484,6 +485,10 @@ function showSettings() {
   };
   openModal(h('div', null, h('h3', null, ico('2699'), ' Settings'),
     row('sound', 'Sound effects', 'Short beeps and fanfares.'),
+    row('music', 'Music in the Golden Ladder', 'Original pirate and suspense tracks.'),
+    h('div', { class: 'srow' }, h('div', null, h('b', null, 'Music volume')),
+      h('input', { type: 'range', min: 0, max: 1, step: 0.05, value: ST.settings.musicVol, 'aria-label': 'Music volume',
+        oninput: e => { ST.settings.musicVol = parseFloat(e.target.value); Music.refreshVolume(); save(); } })),
     row('tts', 'Read words aloud', ttsReady() ? 'Uses this device’s English voice.' : 'No English voice was found on this device.'),
     row('readAnswers', 'Read the right answer after each question', 'Helps pronunciation.'),
     row('confirm', 'Ask “Final answer?” in the Golden Ladder', 'A pause before locking in an answer.'),

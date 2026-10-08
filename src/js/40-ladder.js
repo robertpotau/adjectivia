@@ -21,7 +21,12 @@ function setupLadder() {
       { key: 'style', label: 'How do we play?', def: 'relay', choices: [
         { v: 'relay', label: 'Team relay', desc: 'One ladder for everybody. Players answer in turns and share the lifelines.' },
         { v: 'solo', label: 'One by one', desc: 'Every player climbs their own ladder with their own lifelines.' }] },
-      { key: 'timer', label: 'Time per question', def: 0, choices: [{ v: 0, label: 'No limit' }, { v: 60, label: '60 s' }, { v: 30, label: '30 s' }] }
+      { key: 'timer', label: 'Time per question', def: 0, choices: [{ v: 0, label: 'No limit' }, { v: 60, label: '60 s' }, { v: 30, label: '30 s' }] },
+      { key: 'music', label: 'Music', def: 'mixed', choices: [
+        { v: 'mixed', label: 'Pirates, then suspense', desc: 'Fun pirate music for steps 1–10, scary suspense for the last five.' },
+        { v: 'pirate', label: 'Pirates', desc: 'Epic and fun all the way.' },
+        { v: 'tense', label: 'Suspense', desc: 'Dark, tense and a bit scary; it gets faster as you climb.' },
+        { v: 'off', label: 'Off' }] }
     ],
     rules: ['Steps 5 and 10 are safe: if you fall, you keep those points.', 'You can walk away at any moment and keep what you have.',
       'Use A-D or 1-4 on the keyboard to answer; Enter confirms.'],
@@ -33,6 +38,15 @@ function startLadder(cfg, pids) {
   L = { cfg, pids, style: pids.length === 1 ? 'solo' : cfg.style, qi: 0, runIdx: 0, turn: 0, results: [], used: new Set(), life: null, team: 0 };
   G.cur = null;
   beginRun();
+}
+/** which track and how intense, for the current step of the ladder */
+function ladderMusic() {
+  const m = L.cfg.music || 'mixed', q = L.qi;
+  if (m === 'off' || !ST.settings.music) { Music.stop(0.4); return; }
+  if (m === 'pirate') Music.start('pirate', q / 14);
+  else if (m === 'tense') Music.start('tense', 0.15 + 0.85 * q / 14);
+  else if (q < 10) Music.start('pirate', q / 9);
+  else Music.start('tense', 0.4 + 0.6 * (q - 10) / 4);
 }
 function curPid() { return L.style === 'solo' ? L.pids[L.runIdx] : L.pids[L.turn % L.pids.length]; }
 function freshLife() { return { fifty: true, audience: true, phone: true, swap: true, double: true }; }
@@ -68,6 +82,7 @@ function walkPrize(qi) { return qi > 0 ? PRIZES[qi - 1] : 0; }
 
 function askQuestion() {
   const q = makeLadderQuestion();
+  ladderMusic();
   if (!q) { toast('Could not make a question', 'bad'); return endRun('win'); }
   const pid = curPid();
   G.cur = pid;
@@ -91,7 +106,10 @@ function askQuestion() {
   confirmBar = h('div', { class: 'confirm-bar', hidden: true });
   const hintBtn = hintButton(() => { S.hint = true; S.qv.showHint(); });
   const walk = h('button', { class: 'btn small', onclick: () => walkAway() }, ico('1F6D1'), ' Take ' + fmtPts(walkPrize(L.qi)) + ' & stop');
-  main.append(confirmBar, h('div', { class: 'under-q' }, hintBtn, walk));
+  const musicBtn = h('button', { class: 'btn small' + (ST.settings.music && L.cfg.music !== 'off' ? ' on' : ''), title: 'Music on/off', onclick: () => {
+    ST.settings.music = !ST.settings.music; save(); musicBtn.classList.toggle('on', ST.settings.music && L.cfg.music !== 'off'); if (ST.settings.music) ladderMusic(); else Music.stop(0.3);
+  } }, ico('1F3B5'), ' Music');
+  main.append(confirmBar, h('div', { class: 'under-q' }, hintBtn, walk, musicBtn));
 
   // side column
   const life = h('div', { class: 'lifelines' });
@@ -150,6 +168,7 @@ function askQuestion() {
       return;
     }
     S.qv.reveal(i);
+    Music.duck(ok ? 1500 : 2800, 0.25);
     S.qv.showExplain(ok);
     afterAnswerSpeak(q);
     recordAnswer(pid, q.word, ok, S.hint);
@@ -256,6 +275,7 @@ function phoneModal(q, onDone) {
 
 /* ---------- end of a climb ---------- */
 function endRun(kind) {
+  Music.stop(0.5);
   const pid = curPid();
   const reached = kind === 'win' ? 15 : L.qi;               // steps answered correctly
   const prize = kind === 'win' ? PRIZES[14] : kind === 'walk' ? walkPrize(L.qi) : safePrize(L.qi);
